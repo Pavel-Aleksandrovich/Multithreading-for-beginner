@@ -7,9 +7,8 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
 
-    
    private lazy var button = UIButton()
     
     override func viewDidLoad() {
@@ -21,7 +20,7 @@ class ViewController: UIViewController {
     
     private func loadingView() {
         view.backgroundColor = .systemPink
-        title = "ViewController"
+        title = "HomeViewController"
     }
 
     func initButton() {
