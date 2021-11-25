@@ -15,8 +15,8 @@ class WorkViewController: UIViewController {
             self.alertController()
         }
         loadingView()
+        
     }
-    
     private func loadingView() {
         title = "WorkViewController"
         view.backgroundColor = .red
