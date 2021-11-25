@@ -8,21 +8,44 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
-   private lazy var button = UIButton()
+    
+    private lazy var button = UIButton()
+    
+    private var twoButton: UIButton = {
+      let twoButton = UIButton(frame: CGRect(x: 0, y: 0, width: 240, height: 80))
+        twoButton.backgroundColor = .orange
+        twoButton.setTitle("Tap ", for: .normal)
+        twoButton.layer.cornerRadius = 20
+        twoButton.addTarget(self, action: #selector(goToPictureViewController), for: .touchUpInside)
+        twoButton.translatesAutoresizingMaskIntoConstraints = false
+        return twoButton
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         loadingView()
         initButton()
+        view.addSubview(twoButton)
+        
+        NSLayoutConstraint.activate([
+            twoButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 100),
+            twoButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            twoButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 80),
+            twoButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -80)
+        ])
+        
+    }
+    
+    @objc private func goToPictureViewController() {
+        let vc = PictureViewController()
+        navigationController?.pushViewController(vc, animated: false)
     }
     
     private func loadingView() {
         view.backgroundColor = .systemPink
         title = "HomeViewController"
     }
-
+    
     func initButton() {
         button.frame = CGRect(x: 0, y: 0, width: 240, height: 80)
         button.backgroundColor = .green
@@ -56,6 +79,7 @@ class PhotoViewController: UIViewController {
     private func createAlertActivityIndicator() {
         let loader = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
         loader.hidesWhenStopped = true
+        loader.style = .large
         loader.startAnimating()
         alert.view.addSubview(loader)
         present(alert, animated: true, completion: nil)

@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D26B6F6160FE1258691E815 /* Pods_Multithreading_for_beginner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BCC34F57E48D4514FFF19D1 /* Pods_Multithreading_for_beginner.framework */; };
 		847B363E274627BE00729F58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B363D274627BE00729F58 /* AppDelegate.swift */; };
 		847B3640274627BE00729F58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B363F274627BE00729F58 /* SceneDelegate.swift */; };
 		847B3642274627BE00729F58 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B3641274627BE00729F58 /* HomeViewController.swift */; };
@@ -15,9 +16,13 @@
 		847B364A274627C000729F58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847B3648274627C000729F58 /* LaunchScreen.storyboard */; };
 		847B365227474F2000729F58 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B365127474F2000729F58 /* MainTabBarController.swift */; };
 		847B36542747523C00729F58 /* WorkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B36532747523C00729F58 /* WorkViewController.swift */; };
+		847B36D1274F8DBC00729F58 /* PictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B36D0274F8DBC00729F58 /* PictureViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5E5E62396F9D692BBD27A853 /* Pods-Multithreading for beginner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Multithreading for beginner.debug.xcconfig"; path = "Target Support Files/Pods-Multithreading for beginner/Pods-Multithreading for beginner.debug.xcconfig"; sourceTree = "<group>"; };
+		5F18E23293A7128EC35C1740 /* Pods-Multithreading for beginner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Multithreading for beginner.release.xcconfig"; path = "Target Support Files/Pods-Multithreading for beginner/Pods-Multithreading for beginner.release.xcconfig"; sourceTree = "<group>"; };
+		6BCC34F57E48D4514FFF19D1 /* Pods_Multithreading_for_beginner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Multithreading_for_beginner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		847B363A274627BE00729F58 /* Multithreading for beginner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Multithreading for beginner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		847B363D274627BE00729F58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		847B363F274627BE00729F58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,6 +33,7 @@
 		847B364B274627C000729F58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		847B365127474F2000729F58 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		847B36532747523C00729F58 /* WorkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkViewController.swift; sourceTree = "<group>"; };
+		847B36D0274F8DBC00729F58 /* PictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D26B6F6160FE1258691E815 /* Pods_Multithreading_for_beginner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +53,8 @@
 			children = (
 				847B363C274627BE00729F58 /* Multithreading for beginner */,
 				847B363B274627BE00729F58 /* Products */,
+				D9C374142B03D88F68C1C964 /* Pods */,
+				A51E5B2B1B84FF18F109DE39 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,7 +72,7 @@
 				847B363D274627BE00729F58 /* AppDelegate.swift */,
 				847B363F274627BE00729F58 /* SceneDelegate.swift */,
 				847B365127474F2000729F58 /* MainTabBarController.swift */,
-				847B3641274627BE00729F58 /* HomeViewController.swift */,
+				847B36CF274F8D8900729F58 /* HomeViewController */,
 				847B36532747523C00729F58 /* WorkViewController.swift */,
 				847B3643274627BE00729F58 /* Main.storyboard */,
 				847B3646274627C000729F58 /* Assets.xcassets */,
@@ -73,6 +82,32 @@
 			path = "Multithreading for beginner";
 			sourceTree = "<group>";
 		};
+		847B36CF274F8D8900729F58 /* HomeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				847B3641274627BE00729F58 /* HomeViewController.swift */,
+				847B36D0274F8DBC00729F58 /* PictureViewController.swift */,
+			);
+			path = HomeViewController;
+			sourceTree = "<group>";
+		};
+		A51E5B2B1B84FF18F109DE39 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6BCC34F57E48D4514FFF19D1 /* Pods_Multithreading_for_beginner.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D9C374142B03D88F68C1C964 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5E5E62396F9D692BBD27A853 /* Pods-Multithreading for beginner.debug.xcconfig */,
+				5F18E23293A7128EC35C1740 /* Pods-Multithreading for beginner.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -80,9 +115,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 847B364E274627C000729F58 /* Build configuration list for PBXNativeTarget "Multithreading for beginner" */;
 			buildPhases = (
+				7BFF96228CF9FFD529A85272 /* [CP] Check Pods Manifest.lock */,
 				847B3636274627BE00729F58 /* Sources */,
 				847B3637274627BE00729F58 /* Frameworks */,
 				847B3638274627BE00729F58 /* Resources */,
+				AFA6A68FF3991952D709D7C6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -138,12 +175,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7BFF96228CF9FFD529A85272 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Multithreading for beginner-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AFA6A68FF3991952D709D7C6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Multithreading for beginner/Pods-Multithreading for beginner-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Multithreading for beginner/Pods-Multithreading for beginner-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Multithreading for beginner/Pods-Multithreading for beginner-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		847B3636274627BE00729F58 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				847B36542747523C00729F58 /* WorkViewController.swift in Sources */,
+				847B36D1274F8DBC00729F58 /* PictureViewController.swift in Sources */,
 				847B3642274627BE00729F58 /* HomeViewController.swift in Sources */,
 				847B363E274627BE00729F58 /* AppDelegate.swift in Sources */,
 				847B365227474F2000729F58 /* MainTabBarController.swift in Sources */,
@@ -291,6 +371,7 @@
 		};
 		847B364F274627C000729F58 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E5E62396F9D692BBD27A853 /* Pods-Multithreading for beginner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -310,6 +391,7 @@
 		};
 		847B3650274627C000729F58 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F18E23293A7128EC35C1740 /* Pods-Multithreading for beginner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
