@@ -21,19 +21,31 @@ class HomeViewController: UIViewController {
         return twoButton
     }()
     
+    private let threeButton: UIButton = {
+        let threeButton = UIButton()
+        threeButton.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+        threeButton.setTitle("Table View", for: .normal)
+        threeButton.backgroundColor = .magenta
+        threeButton.layer.cornerRadius = 20
+        threeButton.addTarget(self, action: #selector(goToTableView), for: .touchUpInside)
+        threeButton.translatesAutoresizingMaskIntoConstraints = false
+        return threeButton
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadingView()
+        
         initButton()
         view.addSubview(twoButton)
+        view.addSubview(threeButton)
+        loadingView()
         
-        NSLayoutConstraint.activate([
-            twoButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 100),
-            twoButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            twoButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 80),
-            twoButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -80)
-        ])
         
+    }
+    
+    @objc private func goToTableView() {
+        let vc = TableViewController()
+        navigationController?.pushViewController(vc, animated: false)
     }
     
     @objc private func goToPictureViewController() {
@@ -44,6 +56,18 @@ class HomeViewController: UIViewController {
     private func loadingView() {
         view.backgroundColor = .systemPink
         title = "HomeViewController"
+        
+        NSLayoutConstraint.activate([
+            twoButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 100),
+            twoButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            twoButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 80),
+            twoButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -80),
+            
+            threeButton.centerYAnchor.constraint(equalTo: twoButton.centerYAnchor, constant: 100),
+            threeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            threeButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 80),
+            threeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -80)
+        ])
     }
     
     func initButton() {
@@ -62,60 +86,4 @@ class HomeViewController: UIViewController {
     }
 }
 
-class PhotoViewController: UIViewController {
-    
-    private var alert = UIAlertController(title: nil, message: "Please Wait ...", preferredStyle: .alert)
-    private lazy var image = UIImageView()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        loadingView()
-        startActivityIndicator()
-        initImage()
-        loadPhoto()
-    }
-    
-    private func createAlertActivityIndicator() {
-        let loader = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
-        loader.hidesWhenStopped = true
-        loader.style = .large
-        loader.startAnimating()
-        alert.view.addSubview(loader)
-        present(alert, animated: true, completion: nil)
-    }
-    
-    private func startActivityIndicator() {
-        createAlertActivityIndicator()
-    }
-    
-    private func stopActivityIndicator() {
-        alert.dismiss(animated: true, completion: nil)
-    }
-    
-    private func loadingView() {
-        view.backgroundColor = .systemBlue
-        title = "PhotoViewController"
-        
-    }
-    
-    private func initImage() {
-        image.frame = CGRect(x: 0, y: 0, width: 400, height: 400)
-        view.addSubview(image)
-        image.center = view.center
-    }
-    
-    private func loadPhoto() {
-        let imageURL = URL(string: "https://www.planetware.com/photos-large/F/france-paris-eiffel-tower.jpg")!
-        
-        DispatchQueue.global(qos: .utility).async { [ weak self ] in
-            if let data = try? Data(contentsOf: imageURL){
-                DispatchQueue.main.async {
-                    self?.image.image = UIImage(data: data)
-                }
-            }
-        }
-        stopActivityIndicator()
-    }
-    
-}
+
