@@ -19,6 +19,7 @@
 		847B36D1274F8DBC00729F58 /* PictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B36D0274F8DBC00729F58 /* PictureViewController.swift */; };
 		847B36D32750B71300729F58 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B36D22750B71300729F58 /* PhotoViewController.swift */; };
 		847B36D52750BBAB00729F58 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B36D42750BBAB00729F58 /* TableViewController.swift */; };
+		847B36D92754AF7900729F58 /* ButtonsViewControoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B36D82754AF7900729F58 /* ButtonsViewControoller.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		847B36D0274F8DBC00729F58 /* PictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureViewController.swift; sourceTree = "<group>"; };
 		847B36D22750B71300729F58 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		847B36D42750BBAB00729F58 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		847B36D82754AF7900729F58 /* ButtonsViewControoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsViewControoller.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +78,9 @@
 				847B363D274627BE00729F58 /* AppDelegate.swift */,
 				847B363F274627BE00729F58 /* SceneDelegate.swift */,
 				847B365127474F2000729F58 /* MainTabBarController.swift */,
+				847B36D72754AF2C00729F58 /* ButtonsViewController */,
 				847B36CF274F8D8900729F58 /* HomeViewController */,
-				847B36532747523C00729F58 /* WorkViewController.swift */,
+				847B36D62754AF0C00729F58 /* WorkViewController */,
 				847B3643274627BE00729F58 /* Main.storyboard */,
 				847B3646274627C000729F58 /* Assets.xcassets */,
 				847B3648274627C000729F58 /* LaunchScreen.storyboard */,
@@ -95,6 +98,22 @@
 				847B36D42750BBAB00729F58 /* TableViewController.swift */,
 			);
 			path = HomeViewController;
+			sourceTree = "<group>";
+		};
+		847B36D62754AF0C00729F58 /* WorkViewController */ = {
+			isa = PBXGroup;
+			children = (
+				847B36532747523C00729F58 /* WorkViewController.swift */,
+			);
+			path = WorkViewController;
+			sourceTree = "<group>";
+		};
+		847B36D72754AF2C00729F58 /* ButtonsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				847B36D82754AF7900729F58 /* ButtonsViewControoller.swift */,
+			);
+			path = ButtonsViewController;
 			sourceTree = "<group>";
 		};
 		A51E5B2B1B84FF18F109DE39 /* Frameworks */ = {
@@ -233,6 +252,7 @@
 				847B3642274627BE00729F58 /* HomeViewController.swift in Sources */,
 				847B36D52750BBAB00729F58 /* TableViewController.swift in Sources */,
 				847B363E274627BE00729F58 /* AppDelegate.swift in Sources */,
+				847B36D92754AF7900729F58 /* ButtonsViewControoller.swift in Sources */,
 				847B36D32750B71300729F58 /* PhotoViewController.swift in Sources */,
 				847B365227474F2000729F58 /* MainTabBarController.swift in Sources */,
 				847B3640274627BE00729F58 /* SceneDelegate.swift in Sources */,

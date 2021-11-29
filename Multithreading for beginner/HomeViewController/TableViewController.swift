@@ -18,7 +18,6 @@ class TableViewController: UITableViewController {
     let base = "EUR"
     let symbols = "USD, RUB, AMD"
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self , forCellReuseIdentifier: reuseIdentifirer)

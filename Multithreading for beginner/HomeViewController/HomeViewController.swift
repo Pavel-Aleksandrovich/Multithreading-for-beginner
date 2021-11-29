@@ -10,6 +10,7 @@ import UIKit
 class HomeViewController: UIViewController {
     
     private lazy var button = UIButton()
+    var navController = UINavigationController()
     
     private var twoButton: UIButton = {
       let twoButton = UIButton(frame: CGRect(x: 0, y: 0, width: 240, height: 80))
@@ -31,7 +32,16 @@ class HomeViewController: UIViewController {
         threeButton.translatesAutoresizingMaskIntoConstraints = false
         return threeButton
     }()
-    
+//    
+//    init(navController: UINavigationController) {
+//        self.navController = navController
+//        super.init(nibName: nil, bundle: nil)
+//    }
+//    
+//    required init?(coder: NSCoder) {
+//        super.init(coder: coder)
+//    }
+//    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,8 +50,11 @@ class HomeViewController: UIViewController {
         view.addSubview(threeButton)
         loadingView()
         
-        
     }
+    
+   
+    
+    
     
     @objc private func goToTableView() {
         let vc = TableViewController()
@@ -62,11 +75,13 @@ class HomeViewController: UIViewController {
             twoButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             twoButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 80),
             twoButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -80),
+            twoButton.heightAnchor.constraint(equalToConstant: 80),
             
             threeButton.centerYAnchor.constraint(equalTo: twoButton.centerYAnchor, constant: 100),
             threeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             threeButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 80),
-            threeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -80)
+            threeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -80),
+            threeButton.heightAnchor.constraint(equalToConstant: 80)
         ])
     }
     
