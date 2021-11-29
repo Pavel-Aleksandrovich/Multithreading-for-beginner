@@ -17,7 +17,7 @@ class ButtonsViewControoller: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .orange
+        view.backgroundColor = .white
         
         view.addSubview(stackView)
         stackView.addArrangedSubview(oneButton)
@@ -50,16 +50,34 @@ class ButtonsViewControoller: UIViewController {
             threeButton.widthAnchor.constraint(equalToConstant: 240)
         ])
         
-//        oneButton.frame = CGRect(x: 0, y: 0, width: 200, height: 100)
         oneButton.layer.cornerRadius = 30
-        oneButton.backgroundColor = .gray
+        oneButton.setTitle("One Button", for: .normal)
+        oneButton.backgroundColor = .red
+        oneButton.addTarget(self, action: #selector(goToOneView), for: .touchUpInside)
         
-//        twoButton.frame = CGRect(x: 0, y: 0, width: 200, height: 100)
+        twoButton.layer.cornerRadius = 30
+        twoButton.setTitle("Two Button", for: .normal)
         twoButton.backgroundColor = .blue
+        twoButton.addTarget(self, action: #selector(goToTwoView), for: .touchUpInside)
         
-//        threeButton.frame = CGRect(x: 0, y: 0, width: 200, height: 100)
+        threeButton.layer.cornerRadius = 30
+        threeButton.setTitle("Three Button", for: .normal)
         threeButton.backgroundColor = .green
+        threeButton.addTarget(self, action: #selector(goToThreeView), for: .touchUpInside)
     }
     
+    @objc private func goToOneView() {
+        let vc = OneViewController()
+        navigationController?.pushViewController(vc, animated: false)
+    }
+    
+    @objc private func goToTwoView() {
+        let vc = TwoViewController()
+        navigationController?.pushViewController(vc, animated: false)
+    }
 
+    @objc private func goToThreeView() {
+        let vc = ThreeViewController()
+        navigationController?.pushViewController(vc, animated: false)
+    }
 }

@@ -20,6 +20,9 @@
 		847B36D32750B71300729F58 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B36D22750B71300729F58 /* PhotoViewController.swift */; };
 		847B36D52750BBAB00729F58 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B36D42750BBAB00729F58 /* TableViewController.swift */; };
 		847B36D92754AF7900729F58 /* ButtonsViewControoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B36D82754AF7900729F58 /* ButtonsViewControoller.swift */; };
+		847B36DB2754D47D00729F58 /* OneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B36DA2754D47D00729F58 /* OneViewController.swift */; };
+		847B36DD2754D4D500729F58 /* TwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B36DC2754D4D500729F58 /* TwoViewController.swift */; };
+		847B36DF2754D52100729F58 /* ThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B36DE2754D52100729F58 /* ThreeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		847B36D22750B71300729F58 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		847B36D42750BBAB00729F58 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		847B36D82754AF7900729F58 /* ButtonsViewControoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsViewControoller.swift; sourceTree = "<group>"; };
+		847B36DA2754D47D00729F58 /* OneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneViewController.swift; sourceTree = "<group>"; };
+		847B36DC2754D4D500729F58 /* TwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoViewController.swift; sourceTree = "<group>"; };
+		847B36DE2754D52100729F58 /* ThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +118,9 @@
 			isa = PBXGroup;
 			children = (
 				847B36D82754AF7900729F58 /* ButtonsViewControoller.swift */,
+				847B36DA2754D47D00729F58 /* OneViewController.swift */,
+				847B36DC2754D4D500729F58 /* TwoViewController.swift */,
+				847B36DE2754D52100729F58 /* ThreeViewController.swift */,
 			);
 			path = ButtonsViewController;
 			sourceTree = "<group>";
@@ -248,7 +257,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				847B36542747523C00729F58 /* WorkViewController.swift in Sources */,
+				847B36DB2754D47D00729F58 /* OneViewController.swift in Sources */,
 				847B36D1274F8DBC00729F58 /* PictureViewController.swift in Sources */,
+				847B36DF2754D52100729F58 /* ThreeViewController.swift in Sources */,
 				847B3642274627BE00729F58 /* HomeViewController.swift in Sources */,
 				847B36D52750BBAB00729F58 /* TableViewController.swift in Sources */,
 				847B363E274627BE00729F58 /* AppDelegate.swift in Sources */,
@@ -256,6 +267,7 @@
 				847B36D32750B71300729F58 /* PhotoViewController.swift in Sources */,
 				847B365227474F2000729F58 /* MainTabBarController.swift in Sources */,
 				847B3640274627BE00729F58 /* SceneDelegate.swift in Sources */,
+				847B36DD2754D4D500729F58 /* TwoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
