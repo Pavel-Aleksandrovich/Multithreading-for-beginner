@@ -6,18 +6,57 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class TableViewController: UITableViewController {
     private let reuseIdentifirer = "cell"
-    let array = ["1", "2", "3"]
+    var array = [String]()
+    
+    let key = "0288b3dc9adeb826ad06e4670947341d"
+    let url = "http://data.fixer.io/api/latest"
+    let base = "EUR"
+    let symbols = "USD, RUB, AMD"
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let nib = UINib(nibName: "cell", bundle: nil)
         tableView.register(UITableViewCell.self , forCellReuseIdentifier: reuseIdentifirer)
-        title = "TableViewController"
+//        title = "TableViewController"
+        
+        let parameters = ["access_key": key,
+                          "base": base,
+                          "symbols": symbols
+                         ]
+        
+        fetRequest(url: url, parameters: parameters)
     }
 
+    private func fetRequest(url: String, parameters: [String: String]) {
+        AF.request(url, method: .get, parameters: parameters).responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                self.title = "\(json["date"]) \(json["base"])"
+                
+                self.updatePrices(json: json)
+                
+                print(json)
+            case .failure(let error):
+                print(error)
+            }
+            self.tableView.reloadData()
+        }
+    }
+    
+    private func updatePrices(json: JSON) {
+        for (name, price) in json["rates"] {
+            let curr = "\(name)  \(price)"
+            array.append(curr)
+        }
+    }
+    
+    
     // MARK: - Table view data source
 
 
