@@ -13,7 +13,7 @@ class HomeViewController: UIViewController {
     var navController = UINavigationController()
     
     private var twoButton: UIButton = {
-      let twoButton = UIButton(frame: CGRect(x: 0, y: 0, width: 240, height: 80))
+      let twoButton = UIButton()
         twoButton.backgroundColor = .orange
         twoButton.setTitle("Tap ", for: .normal)
         twoButton.layer.cornerRadius = 20
@@ -24,7 +24,6 @@ class HomeViewController: UIViewController {
     
     private let threeButton: UIButton = {
         let threeButton = UIButton()
-        threeButton.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
         threeButton.setTitle("Table View", for: .normal)
         threeButton.backgroundColor = .magenta
         threeButton.layer.cornerRadius = 20
@@ -51,10 +50,6 @@ class HomeViewController: UIViewController {
         loadingView()
         
     }
-    
-   
-    
-    
     
     @objc private func goToTableView() {
         let vc = TableViewController()

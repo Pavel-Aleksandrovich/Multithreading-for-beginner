@@ -92,8 +92,6 @@ class ImageTableViewCell: UITableViewCell {
             }
         }.resume()
     }
-    
-    
 }
 
 

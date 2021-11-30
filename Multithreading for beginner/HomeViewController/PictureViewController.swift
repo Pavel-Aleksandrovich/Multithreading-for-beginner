@@ -13,12 +13,11 @@ class PictureViewController: UIViewController {
     private let progressView = UIProgressView()
     private let progressLabel = UILabel()
     private let image = UIImageView()
+    private let stackView = UIStackView()
     let imageUrl = "https://cdn.nwmgroups.hu/s/img/i/1603/20160318hiperorias-csillaghalmaz.jpg"
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        initProgressLabel()
-        startLoader()
         loadImage(imageUrl: imageUrl)
     }
     
@@ -28,20 +27,40 @@ class PictureViewController: UIViewController {
         title = "PictureViewController"
         view.backgroundColor = .green
         initImage()
-        
-    }
-    private func initProgressLabel() {
-        progressLabel.frame = CGRect(x: 0, y: 0, width: 300, height: 30)
-        view.addSubview(progressLabel)
-        progressLabel.center = view.center
+        startLoading()
+        initConstraint()
     }
     
-    private func startLoader() {
-        progressView.frame = CGRect(x: 0, y: 0, width: 300, height: 30)
-        view.addSubview(progressView)
-        progressView.center = view.center
-        progressView.translatesAutoresizingMaskIntoConstraints = false
+    private func initConstraint() {
+        NSLayoutConstraint.activate([
+            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            stackView.heightAnchor.constraint(lessThanOrEqualToConstant: 500),
+            
+            progressView.widthAnchor.constraint(equalToConstant: 300),
+            progressView.heightAnchor.constraint(equalToConstant: 20),
+            
+            progressLabel.widthAnchor.constraint(equalToConstant: 150),
+            progressLabel.heightAnchor.constraint(equalToConstant: 50)
+        ])
     }
+    
+    private func startLoading() {
+        view.addSubview(stackView)
+        stackView.addArrangedSubview(progressLabel)
+        stackView.addArrangedSubview(progressView)
+        stackView.axis = .vertical
+        stackView.alignment = .center
+        stackView.distribution = .fillEqually
+        stackView.spacing = 15
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        progressView.translatesAutoresizingMaskIntoConstraints = false
+        progressLabel.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    
     
     private func initImage() {
         image.frame = CGRect(x: 0, y: 0, width: 400, height: 400)
