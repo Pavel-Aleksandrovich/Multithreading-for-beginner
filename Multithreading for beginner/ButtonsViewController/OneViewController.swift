@@ -52,10 +52,6 @@ class OneViewController: UIViewController {
         firstButton.addTarget(self, action: #selector(downloadImage), for: .touchUpInside)
         
         
-        
-        
-        
-        
     }
     
     @objc private func downloadImage() {
