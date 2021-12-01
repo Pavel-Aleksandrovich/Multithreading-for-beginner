@@ -11,7 +11,7 @@ class WorkViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        delay(3){
+        delay(2){
             self.alertController()
         }
         loadingView()

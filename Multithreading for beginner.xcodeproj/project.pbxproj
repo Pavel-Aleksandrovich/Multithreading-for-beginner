@@ -99,8 +99,8 @@
 			isa = PBXGroup;
 			children = (
 				847B3641274627BE00729F58 /* HomeViewController.swift */,
-				847B36D0274F8DBC00729F58 /* PictureViewController.swift */,
 				847B36D22750B71300729F58 /* PhotoViewController.swift */,
+				847B36D0274F8DBC00729F58 /* PictureViewController.swift */,
 				847B36D42750BBAB00729F58 /* TableViewController.swift */,
 			);
 			path = HomeViewController;

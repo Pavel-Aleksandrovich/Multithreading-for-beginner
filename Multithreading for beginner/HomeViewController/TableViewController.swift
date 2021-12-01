@@ -21,7 +21,7 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self , forCellReuseIdentifier: reuseIdentifirer)
-//        title = "TableViewController"
+        tableView.tableFooterView = UIView()
         
         let parameters = ["access_key": key,
                           "base": base,
@@ -44,7 +44,9 @@ class TableViewController: UITableViewController {
             case .failure(let error):
                 print(error)
             }
-            self.tableView.reloadData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
     
@@ -55,9 +57,7 @@ class TableViewController: UITableViewController {
         }
     }
     
-    
     // MARK: - Table view data source
-
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return array.count
@@ -67,10 +67,14 @@ class TableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifirer, for: indexPath)
 
         cell.textLabel?.text = array[indexPath.row]
+        cell.textLabel?.textAlignment = .center
 
         return cell
     }
 
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        100
+    }
   
 
 }
