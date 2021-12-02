@@ -23,6 +23,8 @@
 		847B36DB2754D47D00729F58 /* OneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B36DA2754D47D00729F58 /* OneViewController.swift */; };
 		847B36DD2754D4D500729F58 /* TwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B36DC2754D4D500729F58 /* TwoViewController.swift */; };
 		847B36DF2754D52100729F58 /* ThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B36DE2754D52100729F58 /* ThreeViewController.swift */; };
+		847B36E227588CB200729F58 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B36E127588CB200729F58 /* CustomCell.swift */; };
+		847B36E427588E2F00729F58 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B36E327588E2F00729F58 /* Post.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		847B36DA2754D47D00729F58 /* OneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneViewController.swift; sourceTree = "<group>"; };
 		847B36DC2754D4D500729F58 /* TwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoViewController.swift; sourceTree = "<group>"; };
 		847B36DE2754D52100729F58 /* ThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeViewController.swift; sourceTree = "<group>"; };
+		847B36E127588CB200729F58 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		847B36E327588E2F00729F58 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,9 +124,19 @@
 				847B36D82754AF7900729F58 /* ButtonsViewControoller.swift */,
 				847B36DA2754D47D00729F58 /* OneViewController.swift */,
 				847B36DC2754D4D500729F58 /* TwoViewController.swift */,
-				847B36DE2754D52100729F58 /* ThreeViewController.swift */,
+				847B36E027588C9700729F58 /* ThreeViewController */,
 			);
 			path = ButtonsViewController;
+			sourceTree = "<group>";
+		};
+		847B36E027588C9700729F58 /* ThreeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				847B36DE2754D52100729F58 /* ThreeViewController.swift */,
+				847B36E127588CB200729F58 /* CustomCell.swift */,
+				847B36E327588E2F00729F58 /* Post.swift */,
+			);
+			path = ThreeViewController;
 			sourceTree = "<group>";
 		};
 		A51E5B2B1B84FF18F109DE39 /* Frameworks */ = {
@@ -257,9 +271,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				847B36542747523C00729F58 /* WorkViewController.swift in Sources */,
+				847B36E227588CB200729F58 /* CustomCell.swift in Sources */,
 				847B36DB2754D47D00729F58 /* OneViewController.swift in Sources */,
 				847B36D1274F8DBC00729F58 /* PictureViewController.swift in Sources */,
 				847B36DF2754D52100729F58 /* ThreeViewController.swift in Sources */,
+				847B36E427588E2F00729F58 /* Post.swift in Sources */,
 				847B3642274627BE00729F58 /* HomeViewController.swift in Sources */,
 				847B36D52750BBAB00729F58 /* TableViewController.swift in Sources */,
 				847B363E274627BE00729F58 /* AppDelegate.swift in Sources */,

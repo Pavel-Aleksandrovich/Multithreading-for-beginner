@@ -9,12 +9,19 @@ import UIKit
 
 class ThreeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    private var firstArray: [String] = ["334", "33"]
-    private var secondArray: [String] = ["🐢", "😇"]
+    private var firstArray = [Post]()
+    private var secondArray: [String] = ["", ""]
     private let tableView = UITableView()
+    private let decoder = JSONDecoder()
+    
+    private let sessionConfiguration = URLSessionConfiguration.default
+    private let session = URLSession.shared
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        obtainPosts()
         
         title = "ThreeViewController"
         view.backgroundColor = .green
@@ -35,7 +42,27 @@ class ThreeViewController: UIViewController, UITableViewDelegate, UITableViewDat
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
         
+       
         
+    }
+    
+    private func obtainPosts() {
+        guard let url = URL(string: "https://jsonplaceholder.typicode.com/posts") else { return }
+        
+        session.dataTask(with: url) { [ weak self ] data, response, error in
+            if error == nil, let parsData = data {
+                
+                guard let post = try? self?.decoder.decode([Post].self, from: parsData) else {return}
+                self?.firstArray = post
+                print(post)
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                }
+            } else {
+                print ("Error: \(error?.localizedDescription)")
+            }
+            
+        }.resume()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -46,8 +73,10 @@ class ThreeViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomCell
         
-        cell.textLabel?.text = firstArray[indexPath.row]
-        cell.detailTextLabel?.text = firstArray[indexPath.row]
+        let post = firstArray[indexPath.row]
+        
+        cell.textLabel?.text = post.title
+        cell.detailTextLabel?.text = post.body
         return cell
     }
     
@@ -57,13 +86,4 @@ class ThreeViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
 }
 
-class CustomCell: UITableViewCell {
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
+
