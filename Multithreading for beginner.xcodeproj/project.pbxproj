@@ -25,6 +25,7 @@
 		847B36DF2754D52100729F58 /* ThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B36DE2754D52100729F58 /* ThreeViewController.swift */; };
 		847B36E227588CB200729F58 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B36E127588CB200729F58 /* CustomCell.swift */; };
 		847B36E427588E2F00729F58 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B36E327588E2F00729F58 /* Post.swift */; };
+		847B36E627589D2C00729F58 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B36E527589D2C00729F58 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		847B36DE2754D52100729F58 /* ThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeViewController.swift; sourceTree = "<group>"; };
 		847B36E127588CB200729F58 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		847B36E327588E2F00729F58 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		847B36E527589D2C00729F58 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 				847B36DE2754D52100729F58 /* ThreeViewController.swift */,
 				847B36E127588CB200729F58 /* CustomCell.swift */,
 				847B36E327588E2F00729F58 /* Post.swift */,
+				847B36E527589D2C00729F58 /* NetworkManager.swift */,
 			);
 			path = ThreeViewController;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				847B36D92754AF7900729F58 /* ButtonsViewControoller.swift in Sources */,
 				847B36D32750B71300729F58 /* PhotoViewController.swift in Sources */,
 				847B365227474F2000729F58 /* MainTabBarController.swift in Sources */,
+				847B36E627589D2C00729F58 /* NetworkManager.swift in Sources */,
 				847B3640274627BE00729F58 /* SceneDelegate.swift in Sources */,
 				847B36DD2754D4D500729F58 /* TwoViewController.swift in Sources */,
 			);

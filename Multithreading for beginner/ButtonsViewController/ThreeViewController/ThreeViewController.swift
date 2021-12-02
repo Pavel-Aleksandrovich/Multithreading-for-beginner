@@ -9,14 +9,9 @@ import UIKit
 
 class ThreeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    private var firstArray = [Post]()
-    private var secondArray: [String] = ["", ""]
     private let tableView = UITableView()
-    private let decoder = JSONDecoder()
-    
-    private let sessionConfiguration = URLSessionConfiguration.default
-    private let session = URLSession.shared
-    
+    private var firstArray = [Post]()
+    private let networkManager = NetworkManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +20,6 @@ class ThreeViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         title = "ThreeViewController"
         view.backgroundColor = .green
-        
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -42,27 +36,22 @@ class ThreeViewController: UIViewController, UITableViewDelegate, UITableViewDat
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
         
-       
-        
     }
     
     private func obtainPosts() {
-        guard let url = URL(string: "https://jsonplaceholder.typicode.com/posts") else { return }
         
-        session.dataTask(with: url) { [ weak self ] data, response, error in
-            if error == nil, let parsData = data {
-                
-                guard let post = try? self?.decoder.decode([Post].self, from: parsData) else {return}
+        networkManager.obtainPosts { [ weak self ](result) in
+            switch result {
+            case .success(let post) :
                 self?.firstArray = post
-                print(post)
+                
                 DispatchQueue.main.async {
                     self?.tableView.reloadData()
                 }
-            } else {
-                print ("Error: \(error?.localizedDescription)")
+            case .failure(let error) :
+            print("Error \(error.localizedDescription)")
             }
-            
-        }.resume()
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
