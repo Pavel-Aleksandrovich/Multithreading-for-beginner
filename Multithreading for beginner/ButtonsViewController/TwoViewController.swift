@@ -10,9 +10,11 @@ import UIKit
 class TwoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     private let tableView = UITableView()
-    private let imageArray:[String] = ["https://i.artfile.ru/2560x1600_486677_[www.ArtFile.ru].jpg",
-         "https://i.artfile.ru/1920x1080_913850_[www.ArtFile.ru].jpg",
-         "https://www.culture.ru/storage/images/a4247ecb83d91aad3888641ceb86994b/c9dbf3637b6e163faa41aa3360dc06d9.jpeg"]
+    private let imageArray:[String] = [
+        "https://i.artfile.ru/2560x1600_486677_[www.ArtFile.ru].jpg",
+        "https://i.artfile.ru/1920x1080_913850_[www.ArtFile.ru].jpg",
+        "https://www.culture.ru/storage/images/a4247ecb83d91aad3888641ceb86994b/c9dbf3637b6e163faa41aa3360dc06d9.jpeg"
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +24,7 @@ class TwoViewController: UIViewController, UITableViewDataSource, UITableViewDel
         
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.isPagingEnabled = true
+//        tableView.isPagingEnabled = true
         
         view.addSubview(tableView)
         
@@ -69,7 +71,7 @@ class ImageTableViewCell: UITableViewCell {
     private func initialize() {
         
         image.translatesAutoresizingMaskIntoConstraints = false
-        self.contentView.addSubview(image)
+        contentView.addSubview(image)
         
         NSLayoutConstraint.activate([
             image.leftAnchor.constraint(equalTo: contentView.leftAnchor),
@@ -84,10 +86,10 @@ class ImageTableViewCell: UITableViewCell {
         
         guard let url = URL(string: link) else {return}
         
-        session.dataTask(with: url) { (data, response, error) in
+        session.dataTask(with: url) { [ weak self ] (data, response, error) in
             if let data = data, let image = UIImage(data: data) {
                 DispatchQueue.main.async {
-                    self.image.image = image
+                    self?.image.image = image
                 }
             }
         }.resume()

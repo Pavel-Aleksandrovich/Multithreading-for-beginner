@@ -12,6 +12,7 @@ import SwiftyJSON
 class TableViewController: UITableViewController {
     private let reuseIdentifirer = "cell"
     var array = [String]()
+    var secondArray: [String] = ["Jon", "Jeck", "Black"]
     
     let key = "0288b3dc9adeb826ad06e4670947341d"
     let url = "http://data.fixer.io/api/latest"
@@ -53,6 +54,7 @@ class TableViewController: UITableViewController {
     private func updatePrices(json: JSON) {
         for (name, price) in json["rates"] {
             let curr = "\(name)  \(price)"
+            
             array.append(curr)
         }
     }
@@ -65,7 +67,6 @@ class TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifirer, for: indexPath)
-
         cell.textLabel?.text = array[indexPath.row]
         cell.textLabel?.textAlignment = .center
 

@@ -39,30 +39,37 @@ class OneViewController: UIViewController {
             stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             stackView.heightAnchor.constraint(lessThanOrEqualToConstant: 500),
             
-            firstButton.heightAnchor.constraint(equalToConstant: 80),
-            firstButton.widthAnchor.constraint(equalToConstant: 240),
+            firstButton.heightAnchor.constraint(equalToConstant: 250),
+            firstButton.widthAnchor.constraint(equalToConstant: 250),
             
             image.heightAnchor.constraint(equalToConstant: 300),
-            image.widthAnchor.constraint(equalToConstant: 300)
+            image.widthAnchor.constraint(equalToConstant: 300),
+            image.centerXAnchor.constraint(equalTo: firstButton.centerXAnchor),
+            image.centerYAnchor.constraint(equalTo: firstButton.centerYAnchor)
         ])
         
         firstButton.backgroundColor = .green
         firstButton.setTitle("Download", for: .normal)
-        firstButton.layer.cornerRadius = 30
+        firstButton.setTitleColor(.white, for: .normal)
+        firstButton.titleLabel?.font = .systemFont(ofSize: 40, weight: .semibold)
+        firstButton.layer.cornerRadius = 125
         firstButton.addTarget(self, action: #selector(downloadImage), for: .touchUpInside)
         
         
     }
     
     @objc private func downloadImage() {
+        firstButton.isHidden = true
         let session = URLSession.shared
         
         guard let url = URL(string: "https://wallpaperscave.ru/images/original/18/10-07/sci-fi-planets-90045.jpg") else {return}
         
-        session.dataTask(with: url) { (data, response, error) in
+        session.dataTask(with: url) { [weak self] (data, response, error) in
+            
             if let data = data, let image = UIImage(data: data) {
                 DispatchQueue.main.async {
-                    self.image.image = image
+                    self?.image.image = image
+                    
                 }
             }
         }.resume()
