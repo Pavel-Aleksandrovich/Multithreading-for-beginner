@@ -13,6 +13,7 @@ class ButtonsViewControoller: UIViewController {
     private let oneButton = UIButton()
     private let twoButton = UIButton()
     private let threeButton = UIButton()
+    private let fourButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,7 @@ class ButtonsViewControoller: UIViewController {
         initOneButton()
         initTwoButton()
         initThreeButton()
+        initFourButton()
         layoutConstraints()
     }
     
@@ -30,13 +32,14 @@ class ButtonsViewControoller: UIViewController {
         stackView.addArrangedSubview(oneButton)
         stackView.addArrangedSubview(twoButton)
         stackView.addArrangedSubview(threeButton)
+        stackView.addArrangedSubview(fourButton)
         
         stackView.axis = .vertical
         stackView.spacing = 30
         stackView.alignment = .center
         stackView.distribution = .fillEqually
         
-        [stackView, oneButton, twoButton, threeButton].forEach {
+        [stackView, oneButton, twoButton, threeButton, fourButton].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
     }
@@ -44,6 +47,8 @@ class ButtonsViewControoller: UIViewController {
     private func initOneButton() {
         oneButton.layer.cornerRadius = 30
         oneButton.setTitle("One Button", for: .normal)
+        oneButton.setTitleColor(.white, for: .normal)
+        oneButton.titleLabel?.font = UIFont(name: "Optima Bold", size: 22)
         oneButton.backgroundColor = .red
         oneButton.addTarget(self, action: #selector(goToOneView), for: .touchUpInside)
     }
@@ -51,6 +56,8 @@ class ButtonsViewControoller: UIViewController {
     private func initTwoButton() {
         twoButton.layer.cornerRadius = 30
         twoButton.setTitle("Two Button", for: .normal)
+        twoButton.setTitleColor(.white, for: .normal)
+        twoButton.titleLabel?.font = UIFont(name: "Optima Bold", size: 22)
         twoButton.backgroundColor = .blue
         twoButton.addTarget(self, action: #selector(goToTwoView), for: .touchUpInside)
     }
@@ -58,13 +65,24 @@ class ButtonsViewControoller: UIViewController {
     private func initThreeButton() {
         threeButton.layer.cornerRadius = 30
         threeButton.setTitle("Three Button", for: .normal)
+        threeButton.setTitleColor(.black, for: .normal)
+        threeButton.titleLabel?.font = UIFont(name: "Optima Bold", size: 22)
         threeButton.backgroundColor = .green
         threeButton.addTarget(self, action: #selector(goToThreeView), for: .touchUpInside)
     }
     
+    private func initFourButton() {
+        fourButton.layer.cornerRadius = 30
+        fourButton.setTitle("Four Button", for: .normal)
+        fourButton.setTitleColor(.white, for: .normal)
+        fourButton.titleLabel?.font = UIFont(name: "Optima Bold", size: 22)
+        fourButton.backgroundColor = .purple
+        fourButton.addTarget(self, action: #selector(goToFourView), for: .touchUpInside)
+    }
+    
     private func layoutConstraints() {
         NSLayoutConstraint.activate([
-            stackView.heightAnchor.constraint(lessThanOrEqualToConstant: 600),
+            stackView.heightAnchor.constraint(lessThanOrEqualToConstant: 900),
             stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -77,7 +95,10 @@ class ButtonsViewControoller: UIViewController {
             twoButton.widthAnchor.constraint(equalToConstant: 240),
             
             threeButton.heightAnchor.constraint(equalToConstant: 80),
-            threeButton.widthAnchor.constraint(equalToConstant: 240)
+            threeButton.widthAnchor.constraint(equalToConstant: 240),
+            
+            fourButton.widthAnchor.constraint(equalToConstant: 240),
+            fourButton.heightAnchor.constraint(equalToConstant: 80)
         ])
     }
     
@@ -93,6 +114,11 @@ class ButtonsViewControoller: UIViewController {
 
     @objc private func goToThreeView() {
         let vc = ThreeViewController()
+        navigationController?.pushViewController(vc, animated: false)
+    }
+    
+    @objc private func goToFourView() {
+        let vc = FourViewController()
         navigationController?.pushViewController(vc, animated: false)
     }
 }

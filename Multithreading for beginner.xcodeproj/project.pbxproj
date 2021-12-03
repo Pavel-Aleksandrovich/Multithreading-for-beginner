@@ -28,6 +28,7 @@
 		847B36E627589D2C00729F58 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B36E527589D2C00729F58 /* NetworkManager.swift */; };
 		847B36E92759C91100729F58 /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B36E82759C91100729F58 /* ImageTableViewCell.swift */; };
 		847B36EB2759CADD00729F58 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B36EA2759CADD00729F58 /* ImageModel.swift */; };
+		847B36EE275A1CB700729F58 /* FourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B36ED275A1CB700729F58 /* FourViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		847B36E527589D2C00729F58 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		847B36E82759C91100729F58 /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
 		847B36EA2759CADD00729F58 /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
+		847B36ED275A1CB700729F58 /* FourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 				847B36EC2759D6A500729F58 /* OneViewController */,
 				847B36E72759C8EC00729F58 /* TwoViewController */,
 				847B36E027588C9700729F58 /* ThreeViewController */,
+				847B36EF275A1CCB00729F58 /* FourViewController */,
 			);
 			path = ButtonsViewController;
 			sourceTree = "<group>";
@@ -162,6 +165,14 @@
 				847B36DA2754D47D00729F58 /* OneViewController.swift */,
 			);
 			path = OneViewController;
+			sourceTree = "<group>";
+		};
+		847B36EF275A1CCB00729F58 /* FourViewController */ = {
+			isa = PBXGroup;
+			children = (
+				847B36ED275A1CB700729F58 /* FourViewController.swift */,
+			);
+			path = FourViewController;
 			sourceTree = "<group>";
 		};
 		A51E5B2B1B84FF18F109DE39 /* Frameworks */ = {
@@ -303,6 +314,7 @@
 				847B36E427588E2F00729F58 /* Post.swift in Sources */,
 				847B3642274627BE00729F58 /* HomeViewController.swift in Sources */,
 				847B36D52750BBAB00729F58 /* TableViewController.swift in Sources */,
+				847B36EE275A1CB700729F58 /* FourViewController.swift in Sources */,
 				847B363E274627BE00729F58 /* AppDelegate.swift in Sources */,
 				847B36E92759C91100729F58 /* ImageTableViewCell.swift in Sources */,
 				847B36EB2759CADD00729F58 /* ImageModel.swift in Sources */,

@@ -69,11 +69,8 @@ class OneViewController: UIViewController {
             if let data = data, let image = UIImage(data: data) {
                 DispatchQueue.main.async {
                     self?.image.image = image
-                    
                 }
             }
         }.resume()
     }
-    
-    
 }
