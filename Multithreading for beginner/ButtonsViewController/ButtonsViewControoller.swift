@@ -16,10 +16,17 @@ class ButtonsViewControoller: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         view.backgroundColor = .white
-        
         view.addSubview(stackView)
+        
+        initStackView()
+        initOneButton()
+        initTwoButton()
+        initThreeButton()
+        layoutConstraints()
+    }
+    
+    private func initStackView() {
         stackView.addArrangedSubview(oneButton)
         stackView.addArrangedSubview(twoButton)
         stackView.addArrangedSubview(threeButton)
@@ -32,7 +39,30 @@ class ButtonsViewControoller: UIViewController {
         [stackView, oneButton, twoButton, threeButton].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
-        
+    }
+    
+    private func initOneButton() {
+        oneButton.layer.cornerRadius = 30
+        oneButton.setTitle("One Button", for: .normal)
+        oneButton.backgroundColor = .red
+        oneButton.addTarget(self, action: #selector(goToOneView), for: .touchUpInside)
+    }
+    
+    private func initTwoButton() {
+        twoButton.layer.cornerRadius = 30
+        twoButton.setTitle("Two Button", for: .normal)
+        twoButton.backgroundColor = .blue
+        twoButton.addTarget(self, action: #selector(goToTwoView), for: .touchUpInside)
+    }
+    
+    private func initThreeButton() {
+        threeButton.layer.cornerRadius = 30
+        threeButton.setTitle("Three Button", for: .normal)
+        threeButton.backgroundColor = .green
+        threeButton.addTarget(self, action: #selector(goToThreeView), for: .touchUpInside)
+    }
+    
+    private func layoutConstraints() {
         NSLayoutConstraint.activate([
             stackView.heightAnchor.constraint(lessThanOrEqualToConstant: 600),
             stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
@@ -49,21 +79,6 @@ class ButtonsViewControoller: UIViewController {
             threeButton.heightAnchor.constraint(equalToConstant: 80),
             threeButton.widthAnchor.constraint(equalToConstant: 240)
         ])
-        
-        oneButton.layer.cornerRadius = 30
-        oneButton.setTitle("One Button", for: .normal)
-        oneButton.backgroundColor = .red
-        oneButton.addTarget(self, action: #selector(goToOneView), for: .touchUpInside)
-        
-        twoButton.layer.cornerRadius = 30
-        twoButton.setTitle("Two Button", for: .normal)
-        twoButton.backgroundColor = .blue
-        twoButton.addTarget(self, action: #selector(goToTwoView), for: .touchUpInside)
-        
-        threeButton.layer.cornerRadius = 30
-        threeButton.setTitle("Three Button", for: .normal)
-        threeButton.backgroundColor = .green
-        threeButton.addTarget(self, action: #selector(goToThreeView), for: .touchUpInside)
     }
     
     @objc private func goToOneView() {
