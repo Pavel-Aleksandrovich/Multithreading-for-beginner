@@ -37,29 +37,29 @@ class ApiManager {
     
     static let shared = ApiManager()
     
-    func getUsers(completion: @escaping (Users) -> ()) {
+    func getUsers(completion: @escaping ([User]) -> ()) {
         let request = ApiType.getUsers.request
         URLSession.shared.dataTask(with: request) { data, response, error in
-            if let data = data, let users = try? JSONDecoder().decode(Users.self, from: data) {
+            if let data = data, let users = try? JSONDecoder().decode([User].self, from: data) {
                 completion(users)
             }
         }.resume()
     }
     
-    func getAlbums(completion: @escaping (Album) -> ()) {
-        let request = ApiType.getUsers.request
+    func getAlbums(completion: @escaping ([Album]) -> ()) {
+        let request = ApiType.getAlbums.request
         URLSession.shared.dataTask(with: request) { data, response, error in
-            if let data = data, let albums = try? JSONDecoder().decode(Album.self, from: data) {
-                
+            if let data = data, let albums = try? JSONDecoder().decode([Album].self, from: data) {
+                completion(albums)
             }
         }.resume()
     }
     
     func getPosts(completion: @escaping ([Post]) -> ()) {
-        let request = ApiType.getUsers.request
+        let request = ApiType.getPosts.request
         URLSession.shared.dataTask(with: request) { data, response, error in
-            if let data = data, let posts = try? JSONDecoder().decode(Post.self, from: data) {
-                
+            if let data = data, let posts = try? JSONDecoder().decode([Post].self, from: data) {
+                completion(posts)
             }
         }.resume()
     }
