@@ -10,7 +10,6 @@ import UIKit
 class FourViewController: UIViewController {
     
      
-    private let shared = URLSession.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,18 +17,27 @@ class FourViewController: UIViewController {
         view.backgroundColor = .purple
         title = "FourViewController"
         
-        makeRequest()
+//        ApiManager.shared.getUsers { user in
+//            print(user)
+//            print("seccess")
+//        }
+        
+        ApiManager.shared.getPosts { post in
+            print(post)
+        }
+        
+//        makeRequest()
         
     }
-    
-    private func makeRequest() {
-        guard let url = URL(string: "https://v2.jokeapi.dev/joke/Any") else { return }
-        
-        shared.dataTask(with: url) { data, response, error in
-            if let data = data, let joke = try? JSONDecoder().decode(Joke.self, from: data) {
-                print(joke.setup)
-            }
-        }.resume()
-    }
+//
+//    private func makeRequest() {
+//        guard let url = URL(string: "https://v2.jokeapi.dev/joke/Any") else { return }
+//
+//        URLSession.shared.dataTask(with: url) { data, response, error in
+//            if let data = data, let joke = try? JSONDecoder().decode(Joke.self, from: data) {
+//                print(joke.setup)
+//            }
+//        }.resume()
+//    }
     
 }

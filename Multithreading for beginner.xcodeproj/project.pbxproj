@@ -30,6 +30,10 @@
 		847B36EB2759CADD00729F58 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B36EA2759CADD00729F58 /* ImageModel.swift */; };
 		847B36EE275A1CB700729F58 /* FourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B36ED275A1CB700729F58 /* FourViewController.swift */; };
 		847B36FD275E1FDC00729F58 /* Joke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B36FC275E1FDC00729F58 /* Joke.swift */; };
+		847B36FF275F27AC00729F58 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B36FE275F27AB00729F58 /* ApiManager.swift */; };
+		847B3702275F289F00729F58 /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B3701275F289F00729F58 /* Posts.swift */; };
+		847B3704275F28AB00729F58 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B3703275F28AA00729F58 /* Users.swift */; };
+		847B3706275F28BA00729F58 /* Albums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B3705275F28BA00729F58 /* Albums.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +64,10 @@
 		847B36EA2759CADD00729F58 /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
 		847B36ED275A1CB700729F58 /* FourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourViewController.swift; sourceTree = "<group>"; };
 		847B36FC275E1FDC00729F58 /* Joke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Joke.swift; sourceTree = "<group>"; };
+		847B36FE275F27AB00729F58 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		847B3701275F289F00729F58 /* Posts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Posts.swift; sourceTree = "<group>"; };
+		847B3703275F28AA00729F58 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		847B3705275F28BA00729F58 /* Albums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Albums.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,9 +181,21 @@
 			isa = PBXGroup;
 			children = (
 				847B36ED275A1CB700729F58 /* FourViewController.swift */,
-				847B36FC275E1FDC00729F58 /* Joke.swift */,
+				847B36FE275F27AB00729F58 /* ApiManager.swift */,
+				847B3700275F288500729F58 /* Models */,
 			);
 			path = FourViewController;
+			sourceTree = "<group>";
+		};
+		847B3700275F288500729F58 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				847B36FC275E1FDC00729F58 /* Joke.swift */,
+				847B3701275F289F00729F58 /* Posts.swift */,
+				847B3703275F28AA00729F58 /* Users.swift */,
+				847B3705275F28BA00729F58 /* Albums.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		A51E5B2B1B84FF18F109DE39 /* Frameworks */ = {
@@ -310,6 +330,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				847B36542747523C00729F58 /* WorkViewController.swift in Sources */,
+				847B3702275F289F00729F58 /* Posts.swift in Sources */,
+				847B3706275F28BA00729F58 /* Albums.swift in Sources */,
 				847B36E227588CB200729F58 /* CustomCell.swift in Sources */,
 				847B36DB2754D47D00729F58 /* OneViewController.swift in Sources */,
 				847B36D1274F8DBC00729F58 /* PictureViewController.swift in Sources */,
@@ -318,9 +340,11 @@
 				847B3642274627BE00729F58 /* HomeViewController.swift in Sources */,
 				847B36D52750BBAB00729F58 /* TableViewController.swift in Sources */,
 				847B36EE275A1CB700729F58 /* FourViewController.swift in Sources */,
+				847B3704275F28AB00729F58 /* Users.swift in Sources */,
 				847B363E274627BE00729F58 /* AppDelegate.swift in Sources */,
 				847B36E92759C91100729F58 /* ImageTableViewCell.swift in Sources */,
 				847B36EB2759CADD00729F58 /* ImageModel.swift in Sources */,
+				847B36FF275F27AC00729F58 /* ApiManager.swift in Sources */,
 				847B36D92754AF7900729F58 /* ButtonsViewControoller.swift in Sources */,
 				847B36D32750B71300729F58 /* PhotoViewController.swift in Sources */,
 				847B365227474F2000729F58 /* MainTabBarController.swift in Sources */,
