@@ -35,6 +35,7 @@
 		847B3706275F28BA00729F58 /* Albums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B3705275F28BA00729F58 /* Albums.swift */; };
 		847B370827606AA500729F58 /* FourTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B370727606AA400729F58 /* FourTableViewCell.swift */; };
 		847B370A27606C3000729F58 /* DetailFourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B370927606C3000729F58 /* DetailFourViewController.swift */; };
+		847B370C27607B9D00729F58 /* DetailCellFourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B370B27607B9D00729F58 /* DetailCellFourViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		847B3705275F28BA00729F58 /* Albums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Albums.swift; sourceTree = "<group>"; };
 		847B370727606AA400729F58 /* FourTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourTableViewCell.swift; sourceTree = "<group>"; };
 		847B370927606C3000729F58 /* DetailFourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFourViewController.swift; sourceTree = "<group>"; };
+		847B370B27607B9D00729F58 /* DetailCellFourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCellFourViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,8 +185,9 @@
 			isa = PBXGroup;
 			children = (
 				847B36ED275A1CB700729F58 /* FourViewController.swift */,
-				847B370927606C3000729F58 /* DetailFourViewController.swift */,
 				847B370727606AA400729F58 /* FourTableViewCell.swift */,
+				847B370927606C3000729F58 /* DetailFourViewController.swift */,
+				847B370B27607B9D00729F58 /* DetailCellFourViewController.swift */,
 				847B36FE275F27AB00729F58 /* ApiManager.swift */,
 				847B3700275F288500729F58 /* Models */,
 			);
@@ -348,6 +351,7 @@
 				847B363E274627BE00729F58 /* AppDelegate.swift in Sources */,
 				847B36E92759C91100729F58 /* ImageTableViewCell.swift in Sources */,
 				847B36EB2759CADD00729F58 /* ImageModel.swift in Sources */,
+				847B370C27607B9D00729F58 /* DetailCellFourViewController.swift in Sources */,
 				847B36FF275F27AC00729F58 /* ApiManager.swift in Sources */,
 				847B36D92754AF7900729F58 /* ButtonsViewControoller.swift in Sources */,
 				847B36D32750B71300729F58 /* PhotoViewController.swift in Sources */,
