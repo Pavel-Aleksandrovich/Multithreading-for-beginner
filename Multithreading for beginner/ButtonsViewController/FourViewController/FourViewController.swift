@@ -43,6 +43,7 @@ extension FourViewController: UITableViewDataSource {
 extension FourViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = DetailFourViewController()
+        vc.titleCell = mrArray[indexPath.row].title
         vc.title = "\(indexPath.row)"
         navigationController?.pushViewController(vc, animated: false)
     }
