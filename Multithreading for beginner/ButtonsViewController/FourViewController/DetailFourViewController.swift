@@ -1,60 +1,41 @@
 //
-//  FourViewController.swift
+//  DetailFourViewController.swift
 //  Multithreading for beginner
 //
-//  Created by pavel mishanin on 03.12.2021.
+//  Created by pavel mishanin on 08.12.2021.
 //
 
 import UIKit
 
-class FourViewController: UIViewController {
+class DetailFourViewController: UIViewController {
     
-    private var mrArray = [Album]()
     private let tableView = UITableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = .purple
-        title = "FourViewController"
         initTableView()
-        
-        ApiManager.shared.getAlbums { [weak self] albums in
-            self?.mrArray = albums
-            print(albums)
-            DispatchQueue.main.async {
-                self?.tableView.reloadData()
-            }
-        }
     }
 }
 
-extension FourViewController: UITableViewDataSource {
+extension DetailFourViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        mrArray.count
+        3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return FourTableViewCell.init(title: mrArray[indexPath.row].title)
+        return UITableViewCell()
     }
+    
     
 }
 
-extension FourViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = DetailFourViewController()
-        vc.title = "\(indexPath.row)"
-        navigationController?.pushViewController(vc, animated: false)
-    }
-}
-
-extension FourViewController {
+extension DetailFourViewController {
     
     private func initTableView() {
         view.addSubview(tableView)
         
         tableView.dataSource = self
-        tableView.delegate = self
+//        tableView.delegate = self
         //        tableView.register(FourTableViewCell.self, forCellReuseIdentifier: "sell")
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
