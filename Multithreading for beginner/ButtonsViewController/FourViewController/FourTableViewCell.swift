@@ -33,6 +33,8 @@ class FourTableViewCell: UITableViewCell {
         stackView.axis = .vertical
         stackView.alignment = .center
         stackView.distribution = .fillEqually
+        
+        titleLable.font = .systemFont(ofSize: 25, weight: .medium)
 //        stackView.spacing = 20
         
         [stackView, titleLable].forEach {

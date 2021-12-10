@@ -40,7 +40,7 @@ class ThreeViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     private func obtainPosts() {
         
-        networkManager.obtainPosts { [ weak self ](result) in
+        networkManager.obtainPosts { [ weak self ] (result) in
             switch result {
             case .success(let post) :
                 self?.firstArray = post
