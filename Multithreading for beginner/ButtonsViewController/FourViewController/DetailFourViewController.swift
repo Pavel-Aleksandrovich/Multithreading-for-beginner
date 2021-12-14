@@ -18,7 +18,6 @@ class DetailFourViewController: UIViewController {
         super.viewDidLoad()
         initTableView()
     }
-    
 }
 
 extension DetailFourViewController: UITableViewDataSource {

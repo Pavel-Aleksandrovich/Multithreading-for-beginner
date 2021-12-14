@@ -37,6 +37,7 @@
 		847B370A27606C3000729F58 /* DetailFourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B370927606C3000729F58 /* DetailFourViewController.swift */; };
 		847B370C27607B9D00729F58 /* DetailCellFourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B370B27607B9D00729F58 /* DetailCellFourViewController.swift */; };
 		847B371C27685E0500729F58 /* TestDelegatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B371B27685E0500729F58 /* TestDelegatViewController.swift */; };
+		847B37252768A62600729F58 /* SampleDelegateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B37242768A62600729F58 /* SampleDelegateViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		847B370927606C3000729F58 /* DetailFourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFourViewController.swift; sourceTree = "<group>"; };
 		847B370B27607B9D00729F58 /* DetailCellFourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCellFourViewController.swift; sourceTree = "<group>"; };
 		847B371B27685E0500729F58 /* TestDelegatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDelegatViewController.swift; sourceTree = "<group>"; };
+		847B37242768A62600729F58 /* SampleDelegateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDelegateViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				847B365127474F2000729F58 /* MainTabBarController.swift */,
 				847B36D72754AF2C00729F58 /* ButtonsViewController */,
 				847B36CF274F8D8900729F58 /* HomeViewController */,
+				847B37262768A63800729F58 /* SampleDelegateViewController */,
 				847B36D62754AF0C00729F58 /* WorkViewController */,
 				847B3723276860E300729F58 /* Resources */,
 			);
@@ -263,6 +266,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		847B37262768A63800729F58 /* SampleDelegateViewController */ = {
+			isa = PBXGroup;
+			children = (
+				847B37242768A62600729F58 /* SampleDelegateViewController.swift */,
+			);
+			path = SampleDelegateViewController;
+			sourceTree = "<group>";
+		};
 		A51E5B2B1B84FF18F109DE39 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -408,6 +419,7 @@
 				847B36EE275A1CB700729F58 /* FourViewController.swift in Sources */,
 				847B3704275F28AB00729F58 /* Users.swift in Sources */,
 				847B363E274627BE00729F58 /* AppDelegate.swift in Sources */,
+				847B37252768A62600729F58 /* SampleDelegateViewController.swift in Sources */,
 				847B36E92759C91100729F58 /* ImageTableViewCell.swift in Sources */,
 				847B36EB2759CADD00729F58 /* ImageModel.swift in Sources */,
 				847B370C27607B9D00729F58 /* DetailCellFourViewController.swift in Sources */,

@@ -45,6 +45,17 @@ class HomeViewController: UIViewController {
         return threeButton
     }()
     
+    private let fiveButton: UIButton = {
+        let threeButton = UIButton()
+        threeButton.setTitle("Delegate easy sample", for: .normal)
+        threeButton.backgroundColor = .link
+        threeButton.setTitleColor(.green, for: .normal)
+        threeButton.titleLabel?.font = .systemFont(ofSize: 20, weight: .semibold)
+        threeButton.layer.cornerRadius = 20
+        threeButton.addTarget(self, action: #selector(goSampleDelegate), for: .touchUpInside)
+        return threeButton
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -62,6 +73,7 @@ class HomeViewController: UIViewController {
         stackView.addArrangedSubview(twoButton)
         stackView.addArrangedSubview(threeButton)
         stackView.addArrangedSubview(fourButton)
+        stackView.addArrangedSubview(fiveButton)
     }
     
     private func initStackView() {
@@ -70,7 +82,7 @@ class HomeViewController: UIViewController {
         stackView.distribution = .fillEqually
         stackView.spacing = 30
         
-        [stackView, button, twoButton, threeButton, fourButton].forEach {
+        [stackView, button, twoButton, threeButton, fourButton, fiveButton].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
     }
@@ -104,6 +116,11 @@ class HomeViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: false)
     }
     
+    @objc private func goSampleDelegate() {
+        let vc = SampleDelegateViewController()
+        navigationController?.pushViewController(vc, animated: false)
+    }
+    
     private func setConstraints() {
         NSLayoutConstraint.activate([
             stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
@@ -122,7 +139,10 @@ class HomeViewController: UIViewController {
             threeButton.heightAnchor.constraint(equalToConstant: 80),
             
             fourButton.widthAnchor.constraint(equalToConstant: 240),
-            fourButton.heightAnchor.constraint(equalToConstant: 80)
+            fourButton.heightAnchor.constraint(equalToConstant: 80),
+            
+            fiveButton.widthAnchor.constraint(equalToConstant: 240),
+            fiveButton.heightAnchor.constraint(equalToConstant: 80)
         ])
     }
 }
