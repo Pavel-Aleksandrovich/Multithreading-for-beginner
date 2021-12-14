@@ -109,16 +109,12 @@
 		847B363C274627BE00729F58 /* Multithreading for beginner */ = {
 			isa = PBXGroup;
 			children = (
-				847B363D274627BE00729F58 /* AppDelegate.swift */,
-				847B363F274627BE00729F58 /* SceneDelegate.swift */,
+				847B3722276860B600729F58 /* Application */,
 				847B365127474F2000729F58 /* MainTabBarController.swift */,
 				847B36D72754AF2C00729F58 /* ButtonsViewController */,
 				847B36CF274F8D8900729F58 /* HomeViewController */,
 				847B36D62754AF0C00729F58 /* WorkViewController */,
-				847B3643274627BE00729F58 /* Main.storyboard */,
-				847B3646274627C000729F58 /* Assets.xcassets */,
-				847B3648274627C000729F58 /* LaunchScreen.storyboard */,
-				847B364B274627C000729F58 /* Info.plist */,
+				847B3723276860E300729F58 /* Resources */,
 			);
 			path = "Multithreading for beginner";
 			sourceTree = "<group>";
@@ -127,10 +123,10 @@
 			isa = PBXGroup;
 			children = (
 				847B3641274627BE00729F58 /* HomeViewController.swift */,
-				847B36D22750B71300729F58 /* PhotoViewController.swift */,
-				847B36D0274F8DBC00729F58 /* PictureViewController.swift */,
-				847B36D42750BBAB00729F58 /* TableViewController.swift */,
-				847B371B27685E0500729F58 /* TestDelegatViewController.swift */,
+				847B371D2768602F00729F58 /* PhotoViewController */,
+				847B371E2768604000729F58 /* PictureViewController */,
+				847B371F2768605400729F58 /* TableViewController */,
+				847B37202768606300729F58 /* TestDelegateViewController */,
 			);
 			path = HomeViewController;
 			sourceTree = "<group>";
@@ -138,7 +134,7 @@
 		847B36D62754AF0C00729F58 /* WorkViewController */ = {
 			isa = PBXGroup;
 			children = (
-				847B36532747523C00729F58 /* WorkViewController.swift */,
+				847B37212768608500729F58 /* WorkViewController */,
 			);
 			path = WorkViewController;
 			sourceTree = "<group>";
@@ -205,6 +201,66 @@
 				847B3705275F28BA00729F58 /* Albums.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		847B371D2768602F00729F58 /* PhotoViewController */ = {
+			isa = PBXGroup;
+			children = (
+				847B36D22750B71300729F58 /* PhotoViewController.swift */,
+			);
+			path = PhotoViewController;
+			sourceTree = "<group>";
+		};
+		847B371E2768604000729F58 /* PictureViewController */ = {
+			isa = PBXGroup;
+			children = (
+				847B36D0274F8DBC00729F58 /* PictureViewController.swift */,
+			);
+			path = PictureViewController;
+			sourceTree = "<group>";
+		};
+		847B371F2768605400729F58 /* TableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				847B36D42750BBAB00729F58 /* TableViewController.swift */,
+			);
+			path = TableViewController;
+			sourceTree = "<group>";
+		};
+		847B37202768606300729F58 /* TestDelegateViewController */ = {
+			isa = PBXGroup;
+			children = (
+				847B371B27685E0500729F58 /* TestDelegatViewController.swift */,
+			);
+			path = TestDelegateViewController;
+			sourceTree = "<group>";
+		};
+		847B37212768608500729F58 /* WorkViewController */ = {
+			isa = PBXGroup;
+			children = (
+				847B36532747523C00729F58 /* WorkViewController.swift */,
+			);
+			path = WorkViewController;
+			sourceTree = "<group>";
+		};
+		847B3722276860B600729F58 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				847B3643274627BE00729F58 /* Main.storyboard */,
+				847B363D274627BE00729F58 /* AppDelegate.swift */,
+				847B363F274627BE00729F58 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		847B3723276860E300729F58 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				847B3646274627C000729F58 /* Assets.xcassets */,
+				847B3648274627C000729F58 /* LaunchScreen.storyboard */,
+				847B364B274627C000729F58 /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		A51E5B2B1B84FF18F109DE39 /* Frameworks */ = {
@@ -513,7 +569,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PZRD3MXDYZ;
-				INFOPLIST_FILE = "Multithreading for beginner/Info.plist";
+				INFOPLIST_FILE = "Multithreading for beginner/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -533,7 +589,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PZRD3MXDYZ;
-				INFOPLIST_FILE = "Multithreading for beginner/Info.plist";
+				INFOPLIST_FILE = "Multithreading for beginner/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
