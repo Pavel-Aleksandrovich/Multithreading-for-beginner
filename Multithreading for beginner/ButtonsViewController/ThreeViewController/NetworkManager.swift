@@ -14,9 +14,9 @@ import Foundation
 
 class NetworkManager {
     
-    private let decoder = JSONDecoder()
+    static let shared = NetworkManager()
     
-    private let sessionConfiguration = URLSessionConfiguration.default
+    private let decoder = JSONDecoder()
     private let session = URLSession.shared
     
     func obtainPosts(completion: @escaping (ObtainPostResult) -> ()) {
@@ -37,7 +37,6 @@ class NetworkManager {
                 guard let post = try? self?.decoder.decode([Post].self, from: parsData) else {
                     result = .success(post: [])
                     return
-                    
                 }
                 result = .success(post: post)
                

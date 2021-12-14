@@ -11,7 +11,6 @@ class ThreeViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     private let tableView = UITableView()
     private var firstArray = [Post]()
-    private let networkManager = NetworkManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +39,7 @@ class ThreeViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     private func obtainPosts() {
         
-        networkManager.obtainPosts { [ weak self ] (result) in
+        NetworkManager.shared.obtainPosts { [ weak self ] (result) in
             switch result {
             case .success(let post) :
                 self?.firstArray = post
