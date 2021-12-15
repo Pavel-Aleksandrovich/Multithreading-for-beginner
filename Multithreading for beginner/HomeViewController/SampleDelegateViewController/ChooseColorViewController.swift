@@ -17,12 +17,14 @@ class ChooseColorViewController: UIViewController {
     let stackView = UIStackView()
     let oneView = UIView()
     let oneButton = UIButton()
+    let twoButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "ChooseColorViewController"
         view.backgroundColor = .lightGray.withAlphaComponent(0.8)
         
+        initTwoButton()
         initOneView()
         initOneButton()
         initStackView()
@@ -32,8 +34,9 @@ class ChooseColorViewController: UIViewController {
         view.addSubview(stackView)
         stackView.addArrangedSubview(oneView)
         stackView.addArrangedSubview(oneButton)
+        stackView.addArrangedSubview(twoButton)
 
-        [stackView, oneView, oneButton].forEach{
+        [stackView, oneView, oneButton, twoButton].forEach{
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
 
@@ -49,18 +52,19 @@ class ChooseColorViewController: UIViewController {
             oneButton.heightAnchor.constraint(equalToConstant: view.bounds.width/5),
             oneButton.widthAnchor.constraint(equalToConstant: view.bounds.width/5),
             
+            twoButton.heightAnchor.constraint(equalToConstant: view.bounds.width/5),
+            twoButton.widthAnchor.constraint(equalToConstant: view.bounds.width/5),
+            
             stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             stackView.heightAnchor.constraint(equalToConstant: view.bounds.width/5),
-            stackView.widthAnchor.constraint(equalToConstant: 2*view.bounds.width/5 + stackView.spacing)
+            stackView.widthAnchor.constraint(equalToConstant: 3*view.bounds.width/5 + 2*stackView.spacing)
         ])
 
     }
     
     private func initOneView() {
         
-//        view.addSubview(oneView)
-//        oneView.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
         oneView.backgroundColor = .magenta
         oneView.layer.borderWidth = 6
         oneView.layer.borderColor = UIColor.white.cgColor
@@ -69,12 +73,18 @@ class ChooseColorViewController: UIViewController {
     
     private func initOneButton() {
         
-//        view.addSubview(oneButton)
-//        oneButton.frame = CGRect(x: view.center, y: 0, width: 100, height: 100)
         oneButton.backgroundColor = .systemYellow
         oneButton.layer.borderWidth = 6
         oneButton.layer.borderColor = UIColor.white.cgColor
         oneButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didChooseColor)))
+    }
+    
+    private func initTwoButton() {
+        
+        twoButton.backgroundColor = .systemGreen
+        twoButton.layer.borderWidth = 6
+        twoButton.layer.borderColor = UIColor.white.cgColor
+        twoButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didChooseColor)))
     }
     
     @objc private func didChooseColor(_ gestureRecognizer: UITapGestureRecognizer) {
