@@ -18,16 +18,38 @@ class ChooseColorViewController: UIViewController {
     let oneView = UIView()
     let oneButton = UIButton()
     let twoButton = UIButton()
+    let enterButton = UIButton()
+    let textField = UITextField()
+    var complition: ((String) -> ())?
+    var defaultText = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "ChooseColorViewController"
         view.backgroundColor = .lightGray.withAlphaComponent(0.8)
         
+        
+        
         initTwoButton()
         initOneView()
         initOneButton()
         initStackView()
+        
+        view.addSubview(textField)
+        view.addSubview(enterButton)
+//        textField.translatesAutoresizingMaskIntoConstraints = false
+        enterButton.backgroundColor = .white.withAlphaComponent(0.1)
+        enterButton.setTitle("Set Title", for: .normal)
+        enterButton.addTarget(self, action: #selector(SetTitle), for: .touchUpInside)
+        enterButton.frame = CGRect(x: view.bounds.width/4, y: 100, width: 3*view.bounds.width/5, height: 80)
+        
+        textField.frame = CGRect(x: view.bounds.width/4, y: 200, width: 3*view.bounds.width/5 + 2*stackView.spacing, height: 20)
+        textField.backgroundColor = .white.withAlphaComponent(0.1)
+        textField.text = defaultText
+    }
+    
+    @objc private func SetTitle() {
+        complition?(textField.text!)
     }
     
     private func initStackView() {

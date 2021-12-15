@@ -41,6 +41,10 @@ class SampleDelegateViewController: UIViewController {
     
     @objc private func didTappedRightBarButtonItem() {
         navigationController?.pushViewController(vc, animated: false)
+        
+        vc.complition = { [weak self] text in
+            self?.title = text
+        }
     }
     
     @objc private func changeColor() {
