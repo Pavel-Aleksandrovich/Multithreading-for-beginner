@@ -38,6 +38,7 @@
 		847B370C27607B9D00729F58 /* DetailCellFourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B370B27607B9D00729F58 /* DetailCellFourViewController.swift */; };
 		847B371C27685E0500729F58 /* TestDelegatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B371B27685E0500729F58 /* TestDelegatViewController.swift */; };
 		847B37252768A62600729F58 /* SampleDelegateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B37242768A62600729F58 /* SampleDelegateViewController.swift */; };
+		847B37282769C15C00729F58 /* ChooseColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B37272769C15B00729F58 /* ChooseColorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		847B370B27607B9D00729F58 /* DetailCellFourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCellFourViewController.swift; sourceTree = "<group>"; };
 		847B371B27685E0500729F58 /* TestDelegatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDelegatViewController.swift; sourceTree = "<group>"; };
 		847B37242768A62600729F58 /* SampleDelegateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDelegateViewController.swift; sourceTree = "<group>"; };
+		847B37272769C15B00729F58 /* ChooseColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseColorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				847B37242768A62600729F58 /* SampleDelegateViewController.swift */,
+				847B37272769C15B00729F58 /* ChooseColorViewController.swift */,
 			);
 			path = SampleDelegateViewController;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 				847B37252768A62600729F58 /* SampleDelegateViewController.swift in Sources */,
 				847B36E92759C91100729F58 /* ImageTableViewCell.swift in Sources */,
 				847B36EB2759CADD00729F58 /* ImageModel.swift in Sources */,
+				847B37282769C15C00729F58 /* ChooseColorViewController.swift in Sources */,
 				847B370C27607B9D00729F58 /* DetailCellFourViewController.swift in Sources */,
 				847B36FF275F27AC00729F58 /* ApiManager.swift in Sources */,
 				847B36D92754AF7900729F58 /* ButtonsViewControoller.swift in Sources */,
