@@ -9,27 +9,29 @@ import UIKit
 
 class SampleDelegateViewController: UIViewController {
     
+    let vc = ChooseColorViewController()
+    
+    
     private let button: UIButton = {
         let button = UIButton()
         button.backgroundColor = .systemPink
-        button.setTitle("Tap", for: .normal)
+        button.setTitle("Change Color", for: .normal)
 //        button.titleLabel?.font = .systemFont(ofSize: 40, weight: .bold)
         button.setTitleColor(.white, for: .normal)
 //        button.layer.cornerRadius = button.bounds.height/2
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.borderWidth = 6
         button.layer.borderColor = UIColor.white.cgColor
-//        button.addTarget(<#T##target: Any?##Any?#>, action: <#T##Selector#>, for: <#T##UIControl.Event#>)
+        button.addTarget(self, action: #selector(changeColor), for: .touchUpInside)
         return button
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        vc.delegate = self
         view.addSubview(button)
         button.layer.cornerRadius = view.bounds.width/4
-        button.titleLabel?.font = .systemFont(ofSize: view.bounds.width/10, weight: .bold)
+        button.titleLabel?.font = .systemFont(ofSize: view.bounds.width/20, weight: .bold)
         button.frame = CGRect(x: 0, y: 0, width: view.bounds.width/2, height: view.bounds.width/2)
         button.center = view.center
         title = "SampleDelegateViewController"
@@ -38,9 +40,12 @@ class SampleDelegateViewController: UIViewController {
     }
     
     @objc private func didTappedRightBarButtonItem() {
-        let vc = ChooseColorViewController()
-        vc.delegate = self
+        
         navigationController?.pushViewController(vc, animated: false)
+    }
+    
+    @objc private func changeColor() {
+        vc.view.backgroundColor = button.backgroundColor
     }
     
 }
