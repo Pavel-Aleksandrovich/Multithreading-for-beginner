@@ -115,7 +115,6 @@
 				847B365127474F2000729F58 /* MainTabBarController.swift */,
 				847B36D72754AF2C00729F58 /* ButtonsViewController */,
 				847B36CF274F8D8900729F58 /* HomeViewController */,
-				847B37262768A63800729F58 /* SampleDelegateViewController */,
 				847B36D62754AF0C00729F58 /* WorkViewController */,
 				847B3723276860E300729F58 /* Resources */,
 			);
@@ -130,6 +129,7 @@
 				847B371E2768604000729F58 /* PictureViewController */,
 				847B371F2768605400729F58 /* TableViewController */,
 				847B37202768606300729F58 /* TestDelegateViewController */,
+				847B37262768A63800729F58 /* SampleDelegateViewController */,
 			);
 			path = HomeViewController;
 			sourceTree = "<group>";
