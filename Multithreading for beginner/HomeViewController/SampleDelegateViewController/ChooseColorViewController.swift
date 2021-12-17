@@ -28,8 +28,6 @@ class ChooseColorViewController: UIViewController {
         title = "ChooseColorViewController"
         view.backgroundColor = .lightGray.withAlphaComponent(0.8)
         
-        
-        
         initTwoButton()
         initOneView()
         initOneButton()
@@ -41,6 +39,7 @@ class ChooseColorViewController: UIViewController {
         enterButton.backgroundColor = .white.withAlphaComponent(0.1)
         enterButton.setTitle("Set Title", for: .normal)
         enterButton.addTarget(self, action: #selector(SetTitle), for: .touchUpInside)
+        
         enterButton.frame = CGRect(x: view.bounds.width/4, y: 100, width: 3*view.bounds.width/5, height: 80)
         
         textField.frame = CGRect(x: view.bounds.width/4, y: 200, width: 3*view.bounds.width/5 + 2*stackView.spacing, height: 20)
