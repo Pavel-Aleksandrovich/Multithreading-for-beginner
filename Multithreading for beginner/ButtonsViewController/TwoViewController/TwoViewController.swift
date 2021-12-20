@@ -15,19 +15,16 @@ class TwoViewController: UIViewController, UITableViewDataSource, UITableViewDel
         "https://i.artfile.ru/1920x1080_913850_[www.ArtFile.ru].jpg",
         "https://www.culture.ru/storage/images/a4247ecb83d91aad3888641ceb86994b/c9dbf3637b6e163faa41aa3360dc06d9.jpeg"
     ]
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         title = "TwoViewController"
 //        view.backgroundColor = .blue
-        
         tableView.delegate = self
         tableView.dataSource = self
 //        tableView.isPagingEnabled = true
         
         view.addSubview(tableView)
-        
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([

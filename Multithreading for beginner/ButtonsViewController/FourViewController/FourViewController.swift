@@ -45,6 +45,8 @@ extension FourViewController: UITableViewDataSource {
 
 extension FourViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+        
         let vc = DetailFourViewController()
         vc.titleCell = mrArray[indexPath.row].title
         vc.idCell = mrArray[indexPath.row].id

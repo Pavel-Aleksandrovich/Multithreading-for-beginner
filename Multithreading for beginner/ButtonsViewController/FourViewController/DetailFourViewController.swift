@@ -26,6 +26,7 @@ extension DetailFourViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         return DetailCellFourViewController(title: titleCell, user: "\(userCell)", id: "\(idCell)")
     }
     
