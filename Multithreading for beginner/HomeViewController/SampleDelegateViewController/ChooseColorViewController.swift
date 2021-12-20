@@ -14,7 +14,8 @@ protocol SampleDelegate: AnyObject {
 class ChooseColorViewController: UIViewController {
     
     weak var delegate: SampleDelegate?
-    let stackView = UIStackView()
+    let horizontalStackView = UIStackView()
+    let verticalStackView = UIStackView()
     let oneView = UIView()
     let oneButton = UIButton()
     let twoButton = UIButton()
@@ -31,18 +32,12 @@ class ChooseColorViewController: UIViewController {
         initTwoButton()
         initOneView()
         initOneButton()
-        initStackView()
+        initHorizontalStackView()
+        initVerticalStackView()
         
-        view.addSubview(textField)
-        view.addSubview(enterButton)
-//        textField.translatesAutoresizingMaskIntoConstraints = false
         enterButton.backgroundColor = .white.withAlphaComponent(0.1)
         enterButton.setTitle("Set Title", for: .normal)
         enterButton.addTarget(self, action: #selector(SetTitle), for: .touchUpInside)
-        
-        enterButton.frame = CGRect(x: view.bounds.width/4, y: 100, width: 3*view.bounds.width/5, height: 80)
-        
-        textField.frame = CGRect(x: view.bounds.width/4, y: 200, width: 3*view.bounds.width/5 + 2*stackView.spacing, height: 20)
         textField.backgroundColor = .white.withAlphaComponent(0.1)
         textField.text = defaultText
     }
@@ -51,20 +46,20 @@ class ChooseColorViewController: UIViewController {
         complition?(textField.text!)
     }
     
-    private func initStackView() {
-        view.addSubview(stackView)
-        stackView.addArrangedSubview(oneView)
-        stackView.addArrangedSubview(oneButton)
-        stackView.addArrangedSubview(twoButton)
+    private func initHorizontalStackView() {
+        view.addSubview(horizontalStackView)
+        horizontalStackView.addArrangedSubview(oneView)
+        horizontalStackView.addArrangedSubview(oneButton)
+        horizontalStackView.addArrangedSubview(twoButton)
 
-        [stackView, oneView, oneButton, twoButton].forEach{
+        [horizontalStackView, oneView, oneButton, twoButton].forEach{
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
 
-        stackView.alignment = .fill
-        stackView.axis = .horizontal
-        stackView.distribution = .fillEqually
-        stackView.spacing = 15
+        horizontalStackView.alignment = .fill
+        horizontalStackView.axis = .horizontal
+        horizontalStackView.distribution = .fillEqually
+        horizontalStackView.spacing = 15
         
         NSLayoutConstraint.activate([
             oneView.heightAnchor.constraint(equalToConstant: view.bounds.width/5),
@@ -76,12 +71,40 @@ class ChooseColorViewController: UIViewController {
             twoButton.heightAnchor.constraint(equalToConstant: view.bounds.width/5),
             twoButton.widthAnchor.constraint(equalToConstant: view.bounds.width/5),
             
-            stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            stackView.heightAnchor.constraint(equalToConstant: view.bounds.width/5),
-            stackView.widthAnchor.constraint(equalToConstant: 3*view.bounds.width/5 + 2*stackView.spacing)
+            horizontalStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            horizontalStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            horizontalStackView.heightAnchor.constraint(equalToConstant: view.bounds.width/5),
+            horizontalStackView.widthAnchor.constraint(lessThanOrEqualToConstant: view.bounds.width)
         ])
 
+    }
+    
+    private func initVerticalStackView() {
+        view.addSubview(verticalStackView)
+        verticalStackView.addArrangedSubview(enterButton)
+        verticalStackView.addArrangedSubview(textField)
+        
+        verticalStackView.axis = .vertical
+        verticalStackView.spacing = 15
+        verticalStackView.alignment = .center
+        verticalStackView.distribution = .equalCentering
+        
+        [verticalStackView, enterButton, textField].forEach {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+        }
+        
+        NSLayoutConstraint.activate([
+            verticalStackView.bottomAnchor.constraint(equalTo: horizontalStackView.topAnchor, constant: -50),
+            verticalStackView.widthAnchor.constraint(lessThanOrEqualToConstant: view.bounds.width),
+            verticalStackView.heightAnchor.constraint(lessThanOrEqualToConstant: view.bounds.height/2),
+            verticalStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            enterButton.widthAnchor.constraint(equalToConstant: view.bounds.width/1.5),
+            enterButton.heightAnchor.constraint(equalToConstant: view.bounds.width/5),
+            
+            textField.widthAnchor.constraint(equalToConstant: view.bounds.width/1.5),
+            textField.heightAnchor.constraint(equalToConstant: 20)
+        ])
     }
     
     private func initOneView() {
