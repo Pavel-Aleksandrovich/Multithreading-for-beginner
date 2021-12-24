@@ -11,11 +11,25 @@ class SampleDelegateViewController: UIViewController {
     
     private let vc = ChooseColorViewController()
     private let button = UIButton()
+    private let textLabel = UILabel()
+    
+    private var score = "15" {
+        didSet {
+            textLabel.text = score
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         vc.delegate = self
+        view.backgroundColor = .systemIndigo.withAlphaComponent(0.1)
         
+        view.addSubview(textLabel)
+        textLabel.frame = CGRect(x: 100, y: 100, width: 200, height: 50)
+        textLabel.text = score
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [ weak self ] in
+            self?.score = "24"
+        }
         title = "SampleDelegateViewController"
        
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: .add, style: .plain, target: self, action: #selector(didTappedRightBarButtonItem))
@@ -52,6 +66,7 @@ class SampleDelegateViewController: UIViewController {
         view.backgroundColor = button.backgroundColor
     }
 }
+// MARK: - SampleDelegate
 
 extension SampleDelegateViewController: SampleDelegate {
     
