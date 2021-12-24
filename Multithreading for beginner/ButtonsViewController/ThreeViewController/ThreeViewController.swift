@@ -11,6 +11,14 @@ class ThreeViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     private let tableView = UITableView()
     private var firstArray = [Post]()
+    private let plusButton: UIButton = {
+        let plusButton = UIButton()
+        plusButton.backgroundColor = .green.withAlphaComponent(0.4)
+        plusButton.addTarget(self, action: #selector(tappedPlusButton), for: .touchUpInside)
+        plusButton.translatesAutoresizingMaskIntoConstraints = false
+        return plusButton
+    }()
+    private let plusImage = UIImage(systemName: "heart.fill")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,16 +33,28 @@ class ThreeViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.register(CustomCell.self, forCellReuseIdentifier: "cell")
         
         view.addSubview(tableView)
+        tableView.addSubview(plusButton)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.tableFooterView = UIView()
+        plusButton.layer.cornerRadius = view.bounds.width/10
+        plusButton.setImage(plusImage, for: .normal)
         
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            
+            plusButton.widthAnchor.constraint(equalToConstant: view.bounds.width/5),
+            plusButton.heightAnchor.constraint(equalToConstant: view.bounds.width/5),
+            plusButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50),
+            plusButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50)
         ])
         
+    }
+    
+    @objc private func tappedPlusButton() {
+        print("tappedPlusButton")
     }
     
     private func obtainPosts() {
