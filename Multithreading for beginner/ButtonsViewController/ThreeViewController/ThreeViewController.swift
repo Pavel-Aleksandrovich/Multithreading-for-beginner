@@ -19,7 +19,7 @@ class ThreeViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return plusButton
     }()
     private let plusImage = UIImage(systemName: "heart.fill")
-    
+    private let plusImageView = UIImageView()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,7 +37,9 @@ class ThreeViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.tableFooterView = UIView()
         plusButton.layer.cornerRadius = view.bounds.width/10
-        plusButton.setImage(plusImage, for: .normal)
+        plusImageView.translatesAutoresizingMaskIntoConstraints = false
+        plusImageView.image = plusImage
+        plusButton.setImage(plusImageView.image, for: .normal)
         
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -48,13 +50,21 @@ class ThreeViewController: UIViewController, UITableViewDelegate, UITableViewDat
             plusButton.widthAnchor.constraint(equalToConstant: view.bounds.width/5),
             plusButton.heightAnchor.constraint(equalToConstant: view.bounds.width/5),
             plusButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50),
-            plusButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50)
+            plusButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            
+            plusImageView.widthAnchor.constraint(equalToConstant: 50),
+            plusImageView.heightAnchor.constraint(equalToConstant: 50)
         ])
         
     }
     
     @objc private func tappedPlusButton() {
-        print("tappedPlusButton")
+        showAlert()
+    }
+    
+    private func showAlert() {
+        createAlert(title: "Add post", message: nil, preferredStyle: .alert) { Data in
+        }
     }
     
     private func obtainPosts() {
@@ -93,5 +103,27 @@ class ThreeViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
 }
+// MARK: - UIAlertController
 
+extension UIViewController {
+    
+    func createAlert(title: String, message: String?, preferredStyle: UIAlertController.Style, complition: (String) -> ()) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: preferredStyle)
+        
+        let alertActionOk = UIAlertAction(title: "Ok", style: .default) { _ in
+            
+        }
+        let alertActionCancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        alert.addTextField { text in
+            text.placeholder = "Enter"
+        }
+        
+        alert.addAction(alertActionOk)
+        alert.addAction(alertActionCancel)
+        
+        present(alert, animated: false, completion: nil)
+    }
+    
+}
 
