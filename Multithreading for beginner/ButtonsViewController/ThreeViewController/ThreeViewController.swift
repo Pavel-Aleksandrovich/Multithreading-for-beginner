@@ -30,7 +30,7 @@ class ThreeViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(CustomCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(ThreeCell.self, forCellReuseIdentifier: "cell")
         
         view.addSubview(tableView)
         tableView.addSubview(plusButton)
@@ -93,7 +93,7 @@ class ThreeViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ThreeCell
         
         let post = firstArray[indexPath.row]
         
@@ -106,6 +106,12 @@ class ThreeViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return 100
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+        let vc = ThreeDetailViewController()
+        vc.threeArray.append(firstArray[indexPath.row]) 
+        navigationController?.pushViewController(vc, animated: false)
+    }
 }
 // MARK: - UIAlertController
 

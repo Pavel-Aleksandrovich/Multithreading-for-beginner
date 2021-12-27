@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomCell: UITableViewCell {
+class ThreeCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
