@@ -116,7 +116,7 @@ extension ThreeViewController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: preferredStyle)
         
         let alertActionOk = UIAlertAction(title: "Ok", style: .default) { text in
-            let firstText = alert.textFields?.first?.text
+            let firstText = alert.textFields?[0].text
             let secondText = alert.textFields?[1].text
             let thirdText = alert.textFields?[2].text
             let fourthText = alert.textFields?[3].text
@@ -125,17 +125,22 @@ extension ThreeViewController {
                   let postId = secondText,
                   let title = thirdText,
                   let body = fourthText
-                  else {return}
+                  else { return }
             
-            complition(Post(userId: Int(userId)!, postId: Int(postId)!, title: title, body: body))
+            if title != "" || body != "" {
+                complition(Post(userId: Int(userId) ?? Int(), postId: Int(postId) ?? Int(), title: title, body: body))
+            }
+            
         }
         let alertActionCancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         
         alert.addTextField { text in
             text.placeholder = "Enter userId"
+            text.keyboardType = .asciiCapableNumberPad
         }
         alert.addTextField { text in
             text.placeholder = "Enter postId"
+            text.keyboardType = .asciiCapableNumberPad
         }
         alert.addTextField { text in
             text.placeholder = "Enter title"
