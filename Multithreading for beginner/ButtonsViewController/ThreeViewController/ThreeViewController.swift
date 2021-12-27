@@ -63,7 +63,11 @@ class ThreeViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     private func showAlert() {
-        createAlert(title: "Add post", message: nil, preferredStyle: .alert) { Data in
+        createAlert(title: "Add post", message: nil, preferredStyle: .alert) { [ weak self ] post in
+            self?.firstArray.append(post)
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
         }
     }
     
@@ -105,18 +109,39 @@ class ThreeViewController: UIViewController, UITableViewDelegate, UITableViewDat
 }
 // MARK: - UIAlertController
 
-extension UIViewController {
+extension ThreeViewController {
     
-    func createAlert(title: String, message: String?, preferredStyle: UIAlertController.Style, complition: (String) -> ()) {
+    func createAlert(title: String, message: String?, preferredStyle: UIAlertController.Style,
+                     complition: @escaping (Post) -> ()) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: preferredStyle)
         
-        let alertActionOk = UIAlertAction(title: "Ok", style: .default) { _ in
+        let alertActionOk = UIAlertAction(title: "Ok", style: .default) { text in
+            let firstText = alert.textFields?.first?.text
+            let secondText = alert.textFields?[1].text
+            let thirdText = alert.textFields?[2].text
+            let fourthText = alert.textFields?[3].text
             
+            guard let userId = firstText,
+                  let postId = secondText,
+                  let title = thirdText,
+                  let body = fourthText
+                  else {return}
+            
+            complition(Post(userId: Int(userId)!, postId: Int(postId)!, title: title, body: body))
         }
         let alertActionCancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         
         alert.addTextField { text in
-            text.placeholder = "Enter"
+            text.placeholder = "Enter userId"
+        }
+        alert.addTextField { text in
+            text.placeholder = "Enter postId"
+        }
+        alert.addTextField { text in
+            text.placeholder = "Enter title"
+        }
+        alert.addTextField { text in
+            text.placeholder = "Enter body"
         }
         
         alert.addAction(alertActionOk)
