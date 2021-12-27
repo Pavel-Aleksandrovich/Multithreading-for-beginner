@@ -41,6 +41,8 @@ class ThreeViewController: UIViewController, UITableViewDelegate, UITableViewDat
         plusImageView.image = plusImage
         plusButton.setImage(plusImageView.image, for: .normal)
         
+
+        
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
@@ -60,6 +62,12 @@ class ThreeViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @objc private func tappedPlusButton() {
         showAlert()
+        
+        plusButton.transform = CGAffineTransform(scaleX: 0.4, y: 0.4)
+        
+        UIView.animate(withDuration: 2, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 6, options: .allowUserInteraction) {
+            self.plusButton.transform = .identity
+        }
     }
     
     private func showAlert() {
