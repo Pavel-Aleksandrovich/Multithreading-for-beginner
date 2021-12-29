@@ -11,6 +11,7 @@ class ThreeViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     private let tableView = UITableView()
     private var firstArray = [Post]()
+    private var filterArray = [Post]()
     private let plusButton: UIButton = {
         let plusButton = UIButton()
         plusButton.backgroundColor = .green.withAlphaComponent(0.4)
@@ -20,6 +21,15 @@ class ThreeViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }()
     private let plusImage = UIImage(systemName: "heart.fill")
     private let plusImageView = UIImageView()
+    private let searchController = UISearchController(searchResultsController: nil)
+    private var searchBarIsEmpty: Bool {
+        guard let text = searchController.searchBar.text else { return false}
+        return text.isEmpty
+    }
+    private var isFiltering: Bool {
+        return searchController.isActive && !searchBarIsEmpty
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,7 +51,12 @@ class ThreeViewController: UIViewController, UITableViewDelegate, UITableViewDat
         plusImageView.image = plusImage
         plusButton.setImage(plusImageView.image, for: .normal)
         
-
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Enter your request"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+        navigationItem.hidesSearchBarWhenScrolling = false
         
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -94,19 +109,31 @@ class ThreeViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
         }
     }
+    //MARK: - UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return firstArray.count
+        if isFiltering {
+            return filterArray.count
+        } else {
+            return firstArray.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ThreeCell
         
-        let post = firstArray[indexPath.row]
+//        let post = firstArray[indexPath.row]
+        var array: Post
         
-        cell.textLabel?.text = post.title
-        cell.detailTextLabel?.text = post.body
+        if isFiltering {
+            array = filterArray[indexPath.row]
+        } else {
+            array = firstArray[indexPath.row]
+        }
+        cell.textLabel?.text = array.title
+        cell.detailTextLabel?.text = array.body
+        
         return cell
     }
     
@@ -117,10 +144,31 @@ class ThreeViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
         let vc = ThreeDetailViewController()
-        vc.threeArray.append(firstArray[indexPath.row]) 
+        
+        if isFiltering {
+            vc.threeArray.append(filterArray[indexPath.row])
+        } else {
+            vc.threeArray.append(firstArray[indexPath.row])
+        }
+        
         navigationController?.pushViewController(vc, animated: false)
     }
 }
+// MARK: - UISearchResultsUpdating
+
+extension ThreeViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearchText(searchController.searchBar.text!)
+    }
+    private func filterContentForSearchText(_ searchText: String) {
+        filterArray = firstArray.filter{
+            $0.title.lowercased().contains(searchText.lowercased())
+        }
+        tableView.reloadData()
+    }
+    
+}
+
 // MARK: - UIAlertController
 
 extension ThreeViewController {
