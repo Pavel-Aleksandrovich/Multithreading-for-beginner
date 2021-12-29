@@ -112,11 +112,14 @@ class ThreeViewController: UIViewController, UITableViewDelegate, UITableViewDat
     //MARK: - UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if isFiltering {
-            return filterArray.count
-        } else {
-            return firstArray.count
-        }
+        
+       return isFiltering ? filterArray.count : firstArray.count
+        
+//        if isFiltering {
+//            return filterArray.count
+//        } else {
+//            return firstArray.count
+//        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -126,11 +129,12 @@ class ThreeViewController: UIViewController, UITableViewDelegate, UITableViewDat
 //        let post = firstArray[indexPath.row]
         var array: Post
         
-        if isFiltering {
-            array = filterArray[indexPath.row]
-        } else {
-            array = firstArray[indexPath.row]
-        }
+        array = isFiltering ? filterArray[indexPath.row] : firstArray[indexPath.row]
+//        if isFiltering {
+//            array = filterArray[indexPath.row]
+//        } else {
+//            array = firstArray[indexPath.row]
+//        }
         cell.textLabel?.text = array.title
         cell.detailTextLabel?.text = array.body
         
@@ -145,11 +149,13 @@ class ThreeViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.deselectRow(at: indexPath, animated: false)
         let vc = ThreeDetailViewController()
         
-        if isFiltering {
-            vc.threeArray.append(filterArray[indexPath.row])
-        } else {
-            vc.threeArray.append(firstArray[indexPath.row])
-        }
+        vc.threeArray.append(isFiltering ? filterArray[indexPath.row] : firstArray[indexPath.row])
+        
+//        if isFiltering {
+//            vc.threeArray.append(filterArray[indexPath.row])
+//        } else {
+//            vc.threeArray.append(firstArray[indexPath.row])
+//        }
         
         navigationController?.pushViewController(vc, animated: false)
     }
