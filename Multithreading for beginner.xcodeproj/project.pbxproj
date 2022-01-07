@@ -10,6 +10,7 @@
 		2D26B6F6160FE1258691E815 /* Pods_Multithreading_for_beginner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BCC34F57E48D4514FFF19D1 /* Pods_Multithreading_for_beginner.framework */; };
 		846C70932779ACA30038C739 /* ThreeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846C70922779ACA30038C739 /* ThreeDetailViewController.swift */; };
 		846C70952779AE700038C739 /* ThreeDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846C70942779AE700038C739 /* ThreeDetailCell.swift */; };
+		8476A1B0278803D10062440A /* git test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8476A1AF278803D10062440A /* git test.swift */; };
 		847B363E274627BE00729F58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B363D274627BE00729F58 /* AppDelegate.swift */; };
 		847B3640274627BE00729F58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B363F274627BE00729F58 /* SceneDelegate.swift */; };
 		847B3642274627BE00729F58 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B3641274627BE00729F58 /* HomeViewController.swift */; };
@@ -49,6 +50,7 @@
 		6BCC34F57E48D4514FFF19D1 /* Pods_Multithreading_for_beginner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Multithreading_for_beginner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		846C70922779ACA30038C739 /* ThreeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeDetailViewController.swift; sourceTree = "<group>"; };
 		846C70942779AE700038C739 /* ThreeDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeDetailCell.swift; sourceTree = "<group>"; };
+		8476A1AF278803D10062440A /* git test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "git test.swift"; sourceTree = "<group>"; };
 		847B363A274627BE00729F58 /* Multithreading for beginner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Multithreading for beginner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		847B363D274627BE00729F58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		847B363F274627BE00729F58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 		847B3631274627BE00729F58 = {
 			isa = PBXGroup;
 			children = (
+				8476A1AF278803D10062440A /* git test.swift */,
 				847B363C274627BE00729F58 /* Multithreading for beginner */,
 				847B363B274627BE00729F58 /* Products */,
 				D9C374142B03D88F68C1C964 /* Pods */,
@@ -443,6 +446,7 @@
 				847B3640274627BE00729F58 /* SceneDelegate.swift in Sources */,
 				847B36DD2754D4D500729F58 /* TwoViewController.swift in Sources */,
 				847B370A27606C3000729F58 /* DetailFourViewController.swift in Sources */,
+				8476A1B0278803D10062440A /* git test.swift in Sources */,
 				846C70952779AE700038C739 /* ThreeDetailCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
